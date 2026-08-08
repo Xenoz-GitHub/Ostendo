@@ -1,0 +1,821 @@
+Phase 7 — Career Network & Opportunity Platform
+
+Goal:
+Turn the university ecosystem into a career discovery platform where students can discover internships, jobs, scholarships, competitions, research opportunities, and organizations—while their existing portfolio becomes their professional profile.
+
+The key principle:
+
+The portfolio remains the student's source of truth. Opportunities connect to the portfolio; they don't replace it.
+
+1. Student Career Profile
+
+Phase 6 gives students university identity and achievements.
+
+Phase 7 adds a dedicated career layer.
+
+A student's profile can now contain:
+
+Crystal Santos
+Computer Science Student
+
+Portfolio
+Projects
+Experience
+Education
+Skills
+Achievements
+Certifications
+Resume
+
+Career preferences
+├── Looking for internships
+├── Looking for research
+├── Open to freelance
+└── Available: Summer 2027
+
+Students decide what they want to make visible.
+
+2. Opportunity Platform
+
+Organizations can publish opportunities.
+
+Examples:
+
+Internships
+Student jobs
+Graduate roles
+Research positions
+Scholarships
+Fellowships
+Competitions
+Hackathons
+Apprenticeships
+Freelance opportunities
+
+Example:
+
+Frontend Developer Intern
+
+Company Name
+Remote
+
+Requirements:
+React
+TypeScript
+Git
+
+Application deadline:
+May 30, 2027
+
+[ View Opportunity ]
+3. Opportunity Categories
+
+Students can filter opportunities by:
+
+Type
+Internship
+Full-time
+Part-time
+Research
+Scholarship
+Competition
+Freelance
+Field
+Computer Science
+Engineering
+Design
+Business
+Marketing
+Education
+etc.
+Location
+Remote
+On-site
+Hybrid
+Experience
+Beginner
+Intermediate
+Advanced
+4. Personalized Opportunity Discovery
+
+The platform can use information the student already provided.
+
+For example:
+
+Skills:
+React
+TypeScript
+MySQL
+
+Education:
+Computer Science
+
+Interests:
+Web Development
+
+Then:
+
+Recommended for you
+
+The system can surface opportunities that appear relevant.
+
+But recommendations should be transparent.
+
+For example:
+
+Recommended because you listed React and TypeScript.
+
+Not:
+
+Our AI thinks you're perfect.
+
+5. AI Career Matching
+
+Eventually, AI can help match students with opportunities.
+
+Example:
+
+Frontend Developer Internship
+
+Match: 86%
+
+Strong matches:
+✓ React
+✓ TypeScript
+✓ Git
+
+Potential gap:
+△ Next.js experience
+
+The student can then decide whether to apply.
+
+The AI should assist discovery, not make hiring decisions.
+
+6. Opportunity Detail Page
+
+Each opportunity should have a clear structure:
+
+Frontend Developer Intern
+
+Company
+Location
+Work arrangement
+
+About the role
+...
+
+Responsibilities
+...
+
+Requirements
+...
+
+Nice to have
+...
+
+Compensation
+...
+
+Deadline
+...
+
+[ Apply ]
+[ Save ]
+
+Avoid vague job-board interfaces.
+
+Students should immediately understand:
+
+What is this?
+
+Am I eligible?
+
+How do I apply?
+
+When is the deadline?
+
+7. Save Opportunities
+
+Students can save opportunities.
+
+Saved
+
+Frontend Developer Intern
+Research Assistant
+Summer Fellowship
+Campus Hackathon
+
+This becomes their personal opportunity workspace.
+
+8. Application Tracking
+
+Eventually:
+
+My Applications
+
+Saved
+   ↓
+Interested
+   ↓
+Applied
+   ↓
+Interview
+   ↓
+Offer
+   ↓
+Rejected
+
+Students can track opportunities without needing another spreadsheet.
+
+9. Application Notes
+
+Students can add private notes.
+
+Example:
+
+Contacted recruiter on April 12.
+
+Need to prepare React interview questions.
+
+Application requires transcript.
+
+These notes are private to the student.
+
+10. Deadline Reminders
+
+Students can receive reminders for saved opportunities.
+
+Example:
+
+Application deadline is in 3 days.
+
+This could eventually work through:
+
+In-app notifications
+Email
+PWA notifications
+
+But notifications must remain useful rather than becoming spam.
+
+11. Portfolio-Based Applications
+
+This is where the platform becomes especially interesting.
+
+Instead of:
+
+Upload resume
+
+the student can choose:
+
+Application materials
+
+☑ Portfolio
+☑ Resume
+☑ Featured projects
+☐ GitHub
+
+The application can link directly to the student's public portfolio.
+
+12. Tailored Portfolio
+
+Eventually, students can create a focused version of their portfolio for an opportunity.
+
+For example:
+
+General portfolio
+
+All projects
+
+Software Engineering application
+
+Selected technical projects
+
+UI/UX application
+
+Design projects
+
+Research application
+
+Research + academic work
+
+The underlying portfolio remains the same.
+
+The student simply chooses what to emphasize.
+
+13. AI Application Assistant
+
+AI can help students prepare applications.
+
+For example:
+
+Job description
+
+The student provides an opportunity.
+
+The AI identifies:
+
+Important skills
+
+✓ React
+✓ TypeScript
+✓ REST APIs
+✓ Git
+
+Your portfolio currently demonstrates:
+
+✓ React
+✓ TypeScript
+✓ Git
+
+Consider adding:
+△ REST API project
+
+This provides useful feedback instead of generating meaningless application spam.
+
+14. Cover Letter Assistance
+
+Students can ask:
+
+Help me create a cover letter based on my portfolio.
+
+The system can use:
+
+Their projects
+Experience
+Education
+Skills
+The opportunity description
+
+The student reviews and edits the result.
+
+The AI should never automatically submit applications.
+
+15. Recruiter / Organization Accounts
+
+Companies and organizations can create verified accounts.
+
+For example:
+
+Company
+   │
+   ├── Organization profile
+   ├── Opportunities
+   ├── Events
+   └── Applications
+16. Organization Verification
+
+Organizations should be verified before receiving a prominent verified identity.
+
+Potential states:
+
+Pending verification
+Verified
+Suspended
+
+Verification becomes extremely important once students are using the platform for real opportunities.
+
+17. Organization Profile
+
+A company can have:
+
+Logo
+Description
+Website
+Industry
+Location
+Social links
+Open opportunities
+Events
+
+Example:
+
+Company Name
+
+Technology company building...
+
+Open positions
+├── Software Engineering Intern
+├── UI/UX Intern
+└── Data Analyst Intern
+
+[ Visit website ]
+18. Recruiter Search
+
+Verified organizations may eventually search public student profiles.
+
+They can filter by:
+
+Skills
+Education
+Projects
+Certifications
+Location
+Availability
+Career interests
+
+For example:
+
+React
+TypeScript
+Computer Science
+Internship
+
+→ Relevant public profiles.
+
+19. Student Discovery Controls
+
+Students must have control over this.
+
+Settings could include:
+
+Career visibility
+
+☑ Allow recruiters to discover me
+☑ Show my skills
+☑ Show my projects
+☑ Show my education
+☐ Show my email publicly
+
+Recruiters should never automatically receive private information.
+
+20. Recruiter Contact Requests
+
+Rather than exposing a student's email address:
+
+Contact student
+
+could create a controlled contact request.
+
+Student sees:
+
+A recruiter from Company X wants to contact you.
+
+Then:
+
+Accept
+
+or:
+
+Decline
+
+This protects students from unwanted messages.
+
+21. No Spam
+
+This is a major product rule.
+
+Recruiters should not be able to:
+
+Mass-message students
+Scrape emails
+Send unlimited requests
+Automatically spam hundreds of users
+
+There should be:
+
+Rate limits
+Reporting
+Blocking
+Verification
+Abuse monitoring
+22. University Career Offices
+
+This could become a very strong feature.
+
+Universities could have a dedicated career office.
+
+University
+│
+├── Students
+├── Departments
+├── Programs
+└── Career Center
+       │
+       ├── Opportunities
+       ├── Events
+       ├── Workshops
+       └── Employer relationships
+
+Career staff could publish opportunities specifically for their students.
+
+23. University-Exclusive Opportunities
+
+For example:
+
+Computer Science Internship — University Students Only
+
+Only eligible students can see or apply.
+
+This gives universities a reason to actively use the platform.
+
+24. Career Events
+
+Organizations and universities can create:
+
+Career fairs
+Employer talks
+Portfolio reviews
+Technical workshops
+Hackathons
+Networking events
+
+Students can register.
+
+25. Event Profiles
+
+An event can have:
+
+Tech Career Fair 2027
+
+April 20, 2027
+
+Participating organizations:
+Company A
+Company B
+Company C
+
+Workshops:
+Resume Review
+Technical Interview Prep
+
+[ Register ]
+
+Students can then connect the event to their career activity.
+
+26. Student Achievements
+
+The career profile should aggregate verified accomplishments:
+
+Achievements
+
+🏆 Hackathon Winner
+✓ University of Example
+
+📜 React Certification
+✓ Organization
+
+🔬 Research Presentation
+✓ University Department
+
+🎓 Computer Science
+✓ University of Example
+
+The actual UI should still follow the Phase 0 icon rules—no emoji UI icons. Achievements can use proper Lucide/SVG icons.
+
+27. Portfolio → Career Graph
+
+This is where the platform becomes technically interesting.
+
+The system can understand relationships:
+
+Student
+ │
+ ├── Skills
+ │     ├── React
+ │     └── TypeScript
+ │
+ ├── Projects
+ │     ├── CampusConnect
+ │     └── StudyFlow
+ │
+ ├── Education
+ │     └── Computer Science
+ │
+ └── Experience
+       └── Software Intern
+
+An opportunity has:
+
+Opportunity
+ │
+ ├── Skills
+ │     ├── React
+ │     └── TypeScript
+ │
+ ├── Education
+ │     └── Computer Science
+ │
+ └── Experience
+       └── Internship
+
+The platform can calculate useful compatibility signals.
+
+28. Career Readiness
+
+Students could have a private career readiness dashboard.
+
+For example:
+
+Career readiness
+
+Profile
+█████████░ 90%
+
+Portfolio
+████████░░ 80%
+
+Resume
+██████████ 100%
+
+Projects
+███████░░░ 70%
+
+Career preferences
+████░░░░░░ 40%
+
+Again, this should be a guidance tool, not a judgment of the student.
+
+Avoid presenting a student as:
+
+“73% employable.”
+
+That's inappropriate and misleading.
+
+29. Skill Development
+
+If a student repeatedly sees opportunities requiring:
+
+Docker
+
+but their profile doesn't include Docker, the platform can suggest:
+
+Skill worth exploring
+
+Then potentially connect them to:
+
+University workshops
+Learning resources
+Certifications
+Projects
+
+The goal becomes:
+
+Discover → Learn → Build → Demonstrate → Apply
+
+30. Career Journey
+
+The platform can eventually represent:
+
+Learn
+ ↓
+Build
+ ↓
+Showcase
+ ↓
+Apply
+ ↓
+Interview
+ ↓
+Get experience
+ ↓
+Update portfolio
+
+This creates a feedback loop.
+
+The portfolio isn't just a static webpage anymore.
+
+31. MySQL Plan
+
+The database now supports another major domain:
+
+Users
+Organizations
+Universities
+Websites
+Projects
+Skills
+Education
+Experience
+Achievements
+Opportunities
+Applications
+Saved opportunities
+Events
+Career preferences
+Recruiter requests
+Permissions
+Notifications
+Audit logs
+Subscriptions
+
+This is where database architecture becomes increasingly important.
+
+We should keep domains logically separated even if they live inside the same MySQL database initially.
+
+32. Vercel Plan
+
+Vercel continues to handle the application layer.
+
+Student / Recruiter / University
+              ↓
+           Vercel
+              ↓
+        Application
+              ↓
+           Prisma
+              ↓
+         MySQL
+
+As usage increases, infrastructure decisions should be based on actual traffic and workload.
+
+We shouldn't prematurely build complicated infrastructure.
+
+33. PWA
+
+The student PWA becomes particularly useful here.
+
+Students can:
+
+Save opportunities
+Track applications
+Check deadlines
+Update portfolios
+Review recruiter requests
+Manage career preferences
+
+Notifications can eventually remind them about important deadlines.
+
+34. Trust & Safety
+
+This phase requires serious abuse prevention.
+
+We need:
+
+Organization verification
+Reporting
+Blocking
+Rate limits
+Anti-spam
+Moderation
+Suspicious activity detection
+Account recovery
+Secure authentication
+Audit logs
+
+Students are potentially vulnerable users in a career marketplace, so trust should be a core product feature, not an afterthought.
+
+35. What Phase 7 Does NOT Include
+
+Don't immediately turn this into:
+
+❌ LinkedIn clone
+❌ Social feed
+❌ Influencer platform
+❌ Public likes
+❌ Followers
+❌ Viral content
+❌ Generic messaging platform
+❌ Automated mass applications
+❌ AI applying to jobs automatically
+
+The product should remain focused on:
+
+Student identity + portfolio + career opportunities.
+
+Phase 7 Success Criteria
+
+A student can now:
+
+Build portfolio
+      ↓
+Build resume
+      ↓
+Set career preferences
+      ↓
+Discover opportunities
+      ↓
+Save opportunities
+      ↓
+Track applications
+      ↓
+Tailor portfolio
+      ↓
+Prepare application
+      ↓
+Apply
+      ↓
+Track progress
+
+Organizations can:
+
+Create verified organization
+      ↓
+Publish opportunities
+      ↓
+Find relevant public profiles
+      ↓
+Contact interested students
+      ↓
+Manage applications
+
+Universities can:
+
+Manage students
+      ↓
+Publish opportunities
+      ↓
+Host career events
+      ↓
+Showcase projects
+      ↓
+Connect students with employers

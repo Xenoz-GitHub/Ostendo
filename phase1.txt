@@ -1,0 +1,507 @@
+Phase 1 — Student Portfolio MVP
+Product goal
+
+Build a production-quality MVP where a student can:
+
+Create an account → claim a username → build a portfolio → preview it → publish it → share their personal URL.
+
+Example:
+
+yourapp.vercel.app/crystal
+
+The portfolio should already look polished even though the advanced Canva-like editor doesn't exist yet.
+
+1. Student Accounts
+
+Students should be able to:
+
+Sign up
+Log in
+Log out
+Manage their account
+Change basic account information
+
+The account is the foundation for everything else.
+
+We should also make usernames unique.
+
+For example:
+
+crystal
+alex
+jordan
+maria
+
+Two students cannot claim the same username.
+
+2. Username / Slug System
+
+This is one of the most important parts of the product.
+
+During onboarding:
+
+Choose your personal URL
+
+yourapp.vercel.app/[ username ]
+
+The system should immediately tell them whether the username is available.
+
+We should prevent problematic usernames such as:
+
+admin
+login
+dashboard
+settings
+api
+signup
+
+because these may conflict with application routes.
+
+Eventually, this same system can support custom domains.
+
+3. Student Profile
+
+Students should be able to create their basic professional identity.
+
+Information
+Name
+Profile photo
+Headline
+Bio
+University
+Major / field
+Graduation year
+Location
+Email
+Website/social links
+
+Example:
+
+Crystal Santos
+Computer Science Student
+
+I enjoy building useful software and exploring web technologies.
+
+The profile information should be reusable throughout the portfolio.
+
+4. Projects
+
+Projects should be one of the main features.
+
+Students can add:
+
+Project name
+Description
+Cover image
+Technologies
+GitHub URL
+Live demo URL
+Project date
+Their role
+
+For example:
+
+CampusConnect
+
+A platform for discovering university events.
+
+React · TypeScript · MySQL
+
+[GitHub] [Live Demo]
+
+Students should be able to:
+
+Create projects
+Edit projects
+Delete projects
+Reorder projects
+Choose featured projects
+5. Education
+
+Students can add:
+
+University
+Degree
+Field
+Start year
+Graduation year
+Description
+
+Example:
+
+Bachelor of Science in Computer Science
+University of Example
+2024–2028
+
+6. Experience
+
+Students can add:
+
+Company/organization
+Position
+Description
+Start date
+End date
+Current position
+
+This should support internships, part-time jobs, organizations, freelance work, etc.
+
+7. Skills
+
+Students can add skills such as:
+
+React
+TypeScript
+Java
+Python
+MySQL
+Figma
+Git
+
+Initially, this can simply be a list.
+
+We don't need complicated skill verification or ratings yet.
+
+8. Social Links
+
+Support common links such as:
+
+GitHub
+LinkedIn
+Instagram
+X
+YouTube
+Email
+Personal links
+
+The student chooses which ones appear publicly.
+
+9. Portfolio Templates
+
+Phase 1 should include a small number of polished templates.
+
+I'd start with 3.
+
+Template 1 — Minimal
+
+Professional and clean.
+
+Template 2 — Developer
+
+Focused on projects, technologies and GitHub.
+
+Template 3 — Creative
+
+More visual and expressive.
+
+The important architecture decision is:
+
+Templates should use the same student data.
+
+Changing a template should change the presentation, not destroy their content.
+
+So a student can switch:
+
+Minimal → Developer → Creative
+
+without rebuilding their portfolio.
+
+10. Portfolio Preview
+
+Before publishing, students should be able to see:
+
+This is what your public website looks like.
+
+Ideally:
+
+Desktop preview
+
+and
+
+Mobile preview
+
+Even though we're not building the full visual editor yet, the preview should already be responsive.
+
+11. Publishing
+
+This is the moment the MVP becomes a real product.
+
+Student clicks:
+
+Publish Portfolio
+
+And gets:
+
+yourapp.vercel.app/crystal
+
+Anyone can visit the URL without logging in.
+
+The public portfolio should include:
+
+Profile
+About
+Projects
+Education
+Experience
+Skills
+Social links
+Contact
+12. Public Portfolio SEO
+
+Even in Phase 1, I'd include basic SEO.
+
+Each student's portfolio should have:
+
+Page title
+Description
+Profile image
+Open Graph preview
+Clean URL
+Basic metadata
+
+So when someone shares:
+
+yourapp.vercel.app/crystal
+
+on a messaging app or social platform, it should produce a nice preview.
+
+That's important because sharing is part of the product.
+
+13. Portfolio Privacy
+
+Give students a basic choice:
+
+Public
+
+Anyone can visit.
+
+Unpublished
+
+Only the student can see it while editing.
+
+We don't need complicated private pages yet.
+
+14. MySQL Plan
+
+For development, we'll use the MySQL installation you just completed.
+
+Development
+
+Local MySQL
+
+Next.js
+   ↓
+Prisma
+   ↓
+Local MySQL
+
+This means you don't need to pay for a database while developing.
+
+The database will contain the student's:
+
+Account
+Profile
+Projects
+Education
+Experience
+Skills
+Social links
+Portfolio configuration
+
+We'll use Prisma between the application and MySQL so that database changes are easier to manage.
+
+15. Vercel Plan
+
+We'll use Vercel for the application hosting.
+
+During development:
+
+Your PC
+ ├── Next.js
+ └── MySQL
+
+Once the MVP is ready:
+
+GitHub
+   ↓
+Vercel
+   ↓
+Next.js application
+
+We can start with Vercel's free tier.
+
+We don't need to purchase a domain initially.
+
+Students can use:
+
+yourapp.vercel.app/crystal
+
+This keeps the initial development and testing cost at essentially $0.
+
+16. Production Database
+
+This comes slightly later.
+
+Your local MySQL database cannot be used by Vercel in production because localhost only exists on your computer.
+
+So eventually we'll have:
+
+                  Vercel
+                    │
+                    │
+                 Prisma
+                    │
+                    ▼
+             Hosted MySQL
+
+We'll choose a MySQL provider with a suitable free tier when we're ready to deploy.
+
+We don't need to pay for this during Phase 1 development.
+
+17. GitHub
+
+We'll use GitHub from the beginning.
+
+This gives us:
+
+Version control
+Backup
+Deployment to Vercel
+Ability to experiment safely
+Easy rollback if something breaks
+
+Our deployment flow becomes:
+
+Code
+ ↓
+GitHub
+ ↓
+Vercel
+ ↓
+Production
+18. PWA
+
+The application should eventually be installable as a PWA.
+
+But I'd make the student dashboard the primary PWA experience.
+
+The public portfolio behaves like a normal website.
+
+So:
+
+Dashboard
+
+Install app → manage portfolio
+
+Public portfolio
+
+Normal website → share with recruiters/friends
+
+This distinction makes sense for the product.
+
+19. What Phase 1 deliberately does NOT include
+
+We are saving these for later:
+
+Phase 2+
+
+❌ Canva-like drag-and-drop editor
+❌ Free-form positioning
+❌ Custom components
+❌ Advanced animations
+❌ Custom CSS
+❌ Custom HTML
+❌ Custom domains
+❌ AI portfolio generation
+❌ Analytics
+❌ Payments
+❌ University management
+❌ Portfolio marketplace
+❌ Social networking
+❌ Collaboration
+
+The reason is simple:
+
+Phase 1 needs to prove the product before we build the complicated platform around it.
+
+20. Phase 1 success criteria
+
+I would consider Phase 1 successful when this entire journey works:
+
+Student
+   ↓
+Sign Up
+   ↓
+Choose "crystal"
+   ↓
+Create profile
+   ↓
+Add education
+   ↓
+Add skills
+   ↓
+Add projects
+   ↓
+Choose template
+   ↓
+Preview
+   ↓
+Publish
+   ↓
+yourapp.vercel.app/crystal
+
+And then:
+
+A completely different person can open that URL and see the student's professional website.
+
+That's the first real milestone.
+
+The bigger roadmap
+
+After Phase 1:
+
+Phase 2 — Better customization
+
+Templates become configurable:
+
+Colors
+Fonts
+Spacing
+Section visibility
+Layout options
+Phase 3 — Visual editor
+
+The Canva-like system we discussed:
+
+Drag → Drop → Customize → Preview
+
+with controlled components and predefined actions.
+
+Phase 4 — Advanced website builder
+Custom sections
+Advanced layouts
+Animations
+Interactions
+More components
+Phase 5 — Professional identity
+Custom domains
+Analytics
+Resume tools
+SEO tools
+AI assistance
+Portfolio insights
+Phase 6 — Universities
+
+Potentially:
+
+Give every student at a university their own professional website.
+
+🎯 The philosophy for Phase 1
+
+I'd keep repeating this while we build:
+
+We're not building Canva yet. We're building the foundation that will eventually allow us to build Canva-like editing safely.
+
+The database, portfolio data model, template system, public rendering, username system, and publishing system we build in Phase 1 should all be designed so that the visual editor can be added without rebuilding the entire application later.
+
+That's the part I'd be particularly careful about.

@@ -1,0 +1,749 @@
+Phase 6 — University & Career Ecosystem
+
+Goal:
+Expand the platform from an individual student portfolio builder into a student professional identity platform that universities, organizations, and eventually employers can participate in.
+
+The important thing is that the original product remains intact:
+
+A student owns their portfolio and controls their professional identity.
+
+Universities become an additional layer—not the owner of the student's personal website.
+
+1. University Accounts
+
+Universities can create an organization account.
+
+For example:
+
+University of Example
+        │
+        ├── Students
+        ├── Programs
+        ├── Departments
+        └── Events
+
+A university administrator can manage the institution's presence on the platform.
+
+2. University Verification
+
+Universities should go through an organization verification process.
+
+Potentially:
+
+University
+   ↓
+Apply for organization account
+   ↓
+Verification
+   ↓
+Approved
+   ↓
+University dashboard
+
+This prevents random users from pretending to represent a university.
+
+3. University Branding
+
+A university can have its own branded area.
+
+For example:
+
+University of Example
+
+Computer Science Department
+
+[ Students ] [ Programs ] [ Projects ] [ Events ]
+
+They could configure:
+
+Institution name
+Logo
+Official colors
+Departments
+Programs
+Links
+Contact information
+
+But the branding should remain professional.
+
+No giant gradients or flashy university landing pages.
+
+4. Student Affiliation
+
+A student can associate their portfolio with a university.
+
+For example:
+
+Computer Science
+University of Example
+2024–2028
+
+The university can verify that affiliation if appropriate.
+
+The student's personal portfolio remains theirs.
+
+5. Verified Student Badge
+
+A verified affiliation could appear on a portfolio:
+
+✓ University of Example
+
+This should mean something.
+
+It shouldn't simply be a decorative badge.
+
+The verification system needs to clearly define what is being verified.
+
+6. University Directory
+
+Universities can have a student directory.
+
+For example:
+
+Computer Science Students
+
+[ Search ]
+
+┌──────────────────┐
+│ Profile          │
+│ Alex Santos      │
+│ Computer Science │
+└──────────────────┘
+
+┌──────────────────┐
+│ Profile          │
+│ Maria Cruz       │
+│ Computer Science │
+└──────────────────┘
+
+Students should have control over whether they appear in the directory.
+
+7. Student Privacy
+
+This is extremely important.
+
+A university should not automatically gain access to everything on a student's account.
+
+Students should control:
+
+Public portfolio
+Directory visibility
+Contact information
+Projects
+Resume
+Analytics
+Personal links
+
+University administrators should only see information they are explicitly authorized to see.
+
+8. University Dashboard
+
+University administrators can manage:
+
+Students
+View affiliated students
+Verify students
+Manage affiliation
+Search portfolios
+Programs
+Create programs
+Assign departments
+Manage program information
+Events
+Create career events
+Create portfolio workshops
+Promote university activities
+9. Career Events
+
+Universities could publish events.
+
+Examples:
+
+Career Fair 2027
+
+Computer Science Capstone Showcase
+
+Resume Workshop
+
+Portfolio Review Day
+
+Students can discover events through the platform.
+
+10. Portfolio Showcase
+
+Universities could create curated showcases.
+
+For example:
+
+Best Computer Science Projects — Class of 2027
+
+[ Project ] [ Project ] [ Project ]
+
+[ Project ] [ Project ] [ Project ]
+
+But students should consent before their work is included.
+
+11. Capstone Projects
+
+This could become particularly valuable.
+
+A university can create:
+
+2027 Capstone Showcase
+
+Students submit their projects.
+
+Each project can have:
+
+Title
+Student(s)
+Description
+Technologies
+Demo
+Repository
+Screenshots
+Documentation
+
+The university can organize them by:
+
+Program
+Department
+Year
+Category
+12. Student Project Teams
+
+Phase 6 can introduce project collaboration at the portfolio level.
+
+For example:
+
+CampusConnect
+
+Created by:
+
+Alex Santos
+Maria Cruz
+Daniel Lee
+
+Each student can have the project displayed on their portfolio.
+
+This should not necessarily mean real-time collaborative editing of the website itself.
+
+It's specifically about shared projects.
+
+13. Project Ownership
+
+Shared projects need proper permissions.
+
+For example:
+
+CampusConnect
+
+Owner
+Alex
+
+Members
+Maria
+Daniel
+
+The owner can manage the project.
+
+Members can control whether it appears on their own portfolio.
+
+14. Organizations Beyond Universities
+
+Eventually, the same organization model could support:
+
+Student clubs
+Bootcamps
+Training organizations
+Hackathons
+Student competitions
+Academic programs
+
+For example:
+
+University Robotics Club
+
+could maintain:
+
+Organization page
+Members
+Projects
+Events
+Achievements
+15. Hackathon Support
+
+This could be a very strong feature for students.
+
+A hackathon can create an event:
+
+University Hackathon 2027
+
+Participants can submit projects.
+
+The platform can generate a public showcase:
+
+Hackathon 2027
+
+Projects
+
+[ AI Study Buddy ]
+[ Campus Connect ]
+[ EcoTrack ]
+[ StudyFlow ]
+
+Students can then attach those projects to their portfolios.
+
+16. Achievement System
+
+Students can optionally add verified achievements.
+
+Examples:
+
+Hackathon winner
+Scholarship
+Competition finalist
+Academic award
+Certification
+Research presentation
+
+The platform can distinguish between:
+
+Self-added
+
+and
+
+Organization-verified
+
+This distinction is important.
+
+17. Verified Certifications
+
+Eventually organizations can issue verified achievements.
+
+For example:
+
+✓ React Workshop
+  University of Example
+  Issued: March 2027
+
+The verification could lead to a public verification page.
+
+18. Career Profile
+
+Eventually students could have a unified professional profile:
+
+Crystal Santos
+
+Computer Science Student
+
+Portfolio
+Projects
+Resume
+Skills
+Experience
+Achievements
+Education
+Certifications
+
+The portfolio becomes more than a webpage.
+
+It becomes the student's professional identity layer.
+
+19. Career Opportunities
+
+Later, organizations could publish opportunities:
+
+Internships
+Student jobs
+Research opportunities
+Scholarships
+Competitions
+Freelance opportunities
+
+Students could discover them through the platform.
+
+But this should be approached carefully.
+
+We don't want the platform to immediately become another generic job board.
+
+The opportunities should remain strongly connected to the student's portfolio and skills.
+
+20. Recruiter Access
+
+Eventually, employers could search public student profiles.
+
+For example:
+
+Find students
+
+Skills:
+React
+TypeScript
+
+Education:
+Computer Science
+
+Location:
+...
+
+But this should be privacy-conscious.
+
+Students should be able to choose:
+
+Allow recruiters to discover my profile
+
+or:
+
+Keep my profile discoverable only through my portfolio URL
+
+21. Student Career Profile Settings
+
+Students can control visibility:
+
+Profile visibility
+
+○ Public
+○ University only
+○ Recruiters
+○ Private
+
+The exact permission model would need careful design.
+
+22. University Analytics
+
+Universities could receive aggregate information.
+
+For example:
+
+Portfolio Adoption
+
+Students with portfolios
+72%
+
+Published portfolios
+64%
+
+Completed profiles
+58%
+
+Projects added
+1,842
+
+The emphasis should be on aggregate data where possible.
+
+Don't expose individual student behavior unnecessarily.
+
+23. Program-Level Analytics
+
+Universities could see aggregate information by program.
+
+For example:
+
+Computer Science
+
+Portfolio completion
+81%
+
+Published
+74%
+
+Average projects
+3.2
+
+This could help universities understand whether students are actually building professional profiles.
+
+24. University Onboarding
+
+Make onboarding extremely simple.
+
+Create university account
+        ↓
+Verify institution
+        ↓
+Configure university
+        ↓
+Add programs
+        ↓
+Invite students
+        ↓
+Students create portfolios
+
+Students can join using an invitation or verified institutional email where appropriate.
+
+25. University Invitations
+
+Administrators could invite students.
+
+For example:
+
+Your university invited you to join its Computer Science community.
+
+Student chooses:
+
+Accept
+
+or:
+
+Decline
+
+The student still controls their account.
+
+26. Institutional Templates
+
+Universities could provide optional templates.
+
+For example:
+
+University of Example Portfolio
+
+with the university's branding.
+
+But students should still be able to customize their personal portfolio.
+
+Think:
+
+University branding
+       +
+Student identity
+       =
+Personal portfolio
+
+Not:
+
+University owns the student's website.
+
+27. University Domains
+
+Eventually universities could have:
+
+students.university.edu
+
+or potentially student subdomains.
+
+For example:
+
+crystal.students.university.edu
+
+This would be a much later enterprise feature because domain infrastructure and institutional requirements become more complex.
+
+28. Organization Roles
+
+University accounts need role-based permissions.
+
+For example:
+
+University
+│
+├── Owner
+├── Administrator
+├── Program Manager
+├── Department Manager
+└── Viewer
+
+Each role gets appropriate permissions.
+
+This becomes important once multiple university employees use the platform.
+
+29. Audit Logs
+
+At this scale, important administrative actions should be recorded.
+
+For example:
+
+Administrator
+   ↓
+Verified student
+   ↓
+March 12, 2027
+
+or:
+
+Program administrator changed program settings.
+
+This improves accountability and security.
+
+30. Organization Data Isolation
+
+This becomes a major architectural requirement.
+
+One university must never be able to access another university's private data.
+
+Conceptually:
+
+University A
+ ├── Students
+ ├── Programs
+ └── Projects
+
+University B
+ ├── Students
+ ├── Programs
+ └── Projects
+
+Authorization must be enforced server-side.
+
+Never rely only on UI restrictions.
+
+31. MySQL Plan
+
+At this stage, MySQL becomes a significantly more important part of the platform.
+
+Potential major entities:
+
+Users
+Websites
+Pages
+Components
+Projects
+Organizations
+Universities
+Departments
+Programs
+Memberships
+Events
+Achievements
+Certifications
+Opportunities
+Subscriptions
+Permissions
+Audit logs
+
+We should be very deliberate with database architecture here.
+
+This is the stage where schema design needs to support multi-tenancy properly.
+
+32. Multi-Tenant Architecture
+
+The platform should logically separate organization data.
+
+Conceptually:
+
+Platform
+│
+├── University A
+│    ├── Students
+│    ├── Programs
+│    └── Events
+│
+├── University B
+│    ├── Students
+│    ├── Programs
+│    └── Events
+│
+└── Individual users
+
+This needs to be designed carefully before large-scale university adoption.
+
+33. Vercel Plan
+
+Vercel can continue hosting the web application.
+
+Users
+   ↓
+Vercel
+   ↓
+Application
+   ↓
+Prisma
+   ↓
+MySQL
+
+As traffic grows, we should stop thinking only about:
+
+“Can this fit within the free tier?”
+
+and start thinking:
+
+“What infrastructure does the actual traffic justify?”
+
+The $0 strategy is excellent for validation.
+
+It shouldn't become a constraint once the product has meaningful usage.
+
+34. PWA
+
+The student dashboard remains an installable PWA.
+
+University administrators can also use the dashboard through the browser/PWA.
+
+The public-facing pages remain optimized websites.
+
+35. What Phase 6 Does NOT Mean
+
+We're still not automatically building a giant LinkedIn competitor.
+
+Avoid immediately adding:
+
+❌ Feed
+❌ Likes
+❌ Followers
+❌ Viral posts
+❌ Public messaging
+❌ Generic social networking
+❌ Endless scrolling
+❌ Engagement algorithms
+
+The platform should remain centered around:
+
+Student → Portfolio → Projects → Education → Career
+
+Phase 6 Success Criteria
+
+The platform should be able to support this ecosystem:
+
+                    PLATFORM
+                       │
+        ┌──────────────┴──────────────┐
+        │                             │
+     STUDENTS                    ORGANIZATIONS
+        │                             │
+        │                       Universities
+        │                       Clubs
+        │                       Hackathons
+        │                             │
+        └──────────────┬──────────────┘
+                       │
+                 PORTFOLIOS
+                       │
+                 PROJECTS
+                       │
+                 ACHIEVEMENTS
+                       │
+                 OPPORTUNITIES
+
+A student can:
+
+Create portfolio
+      ↓
+Build projects
+      ↓
+Join university
+      ↓
+Verify affiliation
+      ↓
+Participate in events
+      ↓
+Showcase achievements
+      ↓
+Build resume
+      ↓
+Share professional identity
+      ↓
+Discover opportunities
+
+And the university can:
+
+Create organization
+      ↓
+Invite students
+      ↓
+Verify affiliations
+      ↓
+Create programs
+      ↓
+Host events
+      ↓
+Showcase projects
+      ↓
+Support student career development

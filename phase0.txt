@@ -1,0 +1,1274 @@
+Phase 0 — Production Standards & Agent Rules
+1. Product Design Philosophy
+
+The application must feel like a real production product, not:
+
+a hackathon demo
+a tutorial project
+an AI-generated SaaS template
+a generic dashboard
+
+Every decision should prioritize:
+
+Clean design
+Professional appearance
+Minimal complexity
+Accessibility
+Performance
+Maintainability
+Consistency
+Real user needs
+
+Every UI element must have a purpose.
+
+Do not add visual elements merely because they look impressive.
+
+The goal:
+
+Build a product that real students can depend on.
+
+2. No AI-Slop UI
+
+Agents must avoid common AI-generated design patterns.
+
+Strictly avoid:
+
+Random gradients
+Gradient text
+Glow effects
+Neon colors
+Excessive rounded cards
+Excessive pill-shaped UI
+Glassmorphism everywhere
+Decorative blobs
+Floating shapes
+Fake statistics
+Fake badges
+Excessive animations
+Giant unnecessary hero sections
+Repetitive card layouts
+Excessive shadows
+Unnecessary illustrations
+Generic "modern SaaS" layouts
+
+The design should feel intentionally designed by a professional product designer.
+
+3. No Gradients
+
+Do not use gradients unless explicitly requested.
+
+Avoid gradients in:
+
+Backgrounds
+Buttons
+Text
+Cards
+Borders
+Decorative elements
+
+Prefer:
+
+Solid colors
+Strong typography
+Proper spacing
+Borders
+Clear hierarchy
+Subtle elevation
+
+Good design comes from layout and typography, not visual effects.
+
+4. No Emoji as UI Icons
+
+This rule is strict.
+
+Never use emojis as interface icons.
+
+Bad:
+
+🚀 Projects
+💼 Experience
+📚 Education
+📧 Contact
+
+Use:
+
+Lucide icons
+Professional SVG icons
+A consistent icon library
+
+Example:
+
+Projects      [Lucide icon]
+Experience    [Lucide icon]
+Education     [Lucide icon]
+Contact       [Lucide icon]
+
+Emojis may exist inside user-generated content if the student chooses.
+
+The application UI itself must never use emojis as icons.
+
+5. Icon Standards
+
+Icons must:
+
+Use consistent stroke width
+Have consistent sizing
+Align correctly
+Support accessibility
+Have a functional purpose
+
+Do not:
+
+Mix random icon libraries
+Add icons everywhere
+Use icons only for decoration
+
+Prefer one consistent icon system.
+
+6. Typography Rules
+
+Typography creates hierarchy.
+
+Use a controlled scale:
+
+Display
+Heading
+Subheading
+Body
+Caption
+
+Avoid:
+
+Too many fonts
+Random font sizes
+Excessive bold text
+Huge unnecessary headings
+
+Maximum:
+
+One or two font families
+
+unless a specific design requirement exists.
+
+7. Color System
+
+Use a deliberate design system.
+
+Define:
+
+Primary
+Secondary
+Background
+Surface
+Border
+Foreground
+Muted Foreground
+Success
+Warning
+Destructive
+
+Colors must have meaning.
+
+Do not introduce random colors for individual components.
+
+8. Spacing System
+
+Use consistent spacing.
+
+Avoid random values:
+
+13px
+19px
+27px
+43px
+
+unless there is a specific reason.
+
+Prefer:
+
+Consistent spacing scale
+Rhythm
+Alignment
+9. Responsive Design
+
+Everything must be mobile-first.
+
+The product has two main experiences:
+
+Student Dashboard
+
+Must work on:
+
+Mobile
+Tablet
+Desktop
+Public Portfolio Website
+
+Must work on:
+
+Mobile
+Tablet
+Desktop
+
+Never assume users are on desktop.
+
+10. Accessibility Requirements
+
+Accessibility is production quality.
+
+Consider:
+
+Keyboard navigation
+Focus states
+Semantic HTML
+Screen readers
+Color contrast
+Accessible forms
+Reduced motion
+
+Never rely only on:
+
+Color
+Hover
+Animation
+Icons
+
+to communicate important information.
+
+11. Buttons
+
+Buttons must clearly describe actions.
+
+Avoid:
+
+Click Here
+Submit
+Continue
+
+Prefer:
+
+Create Portfolio
+Save Changes
+Publish Portfolio
+Add Project
+Preview Website
+
+Button hierarchy:
+
+Primary
+
+Main action.
+
+Secondary
+
+Supporting action.
+
+Destructive
+
+Dangerous action.
+
+Do not make every button visually primary.
+
+12. Forms
+
+Every form should include:
+
+Label
+Correct input type
+Validation
+Error messages
+Loading states
+Success feedback
+
+Never rely only on placeholders.
+
+13. Loading States
+
+Never leave users staring at empty screens.
+
+Use:
+
+Skeletons
+Loading indicators
+Disabled states
+Progress indicators
+
+Avoid unnecessary animation.
+
+14. Error Handling
+
+Never expose technical errors.
+
+Bad:
+
+PrismaClientKnownRequestError
+500 Error
+Database exception
+
+Good:
+
+Something went wrong while saving your project.
+
+Please try again.
+
+Technical details belong in internal logs.
+
+15. Empty States
+
+Empty states should guide users.
+
+Bad:
+
+No data found.
+
+Good:
+
+No projects yet.
+
+Add your first project to start building your portfolio.
+16. Animation Rules
+
+Animation should communicate.
+
+Allowed:
+
+Page transitions
+Dialog opening
+State changes
+Reordering
+Feedback
+
+Avoid:
+
+Floating animations
+Constant movement
+Decorative animations
+Slow transitions
+
+Respect:
+
+prefers-reduced-motion
+17. No Fake Production Data
+
+Never leave:
+
+John Doe
+johndoe@example.com
+10,000 users
+99% satisfaction
+
+inside production screens.
+
+If mock data is needed:
+
+Clearly isolate it
+Never mix with production logic
+18. No Hardcoded User Data
+
+Student information must come from:
+
+Database
+Application state
+User input
+
+Never hardcode:
+
+Names
+Projects
+Skills
+Experience
+Statistics
+19. Data and Presentation Separation
+
+Student data must be separated from visual presentation.
+
+Architecture:
+
+Student Data
+
+     ↓
+
+Template System
+
+     ↓
+
+Portfolio Website
+
+Templates consume the same underlying data.
+
+Changing templates must not destroy information.
+
+20. Future Visual Editor Rules
+
+The visual editor must be schema-driven.
+
+Users customize:
+
+Layout
+Components
+Styles
+Content
+Allowed actions
+
+Users must NOT execute arbitrary code.
+
+Never allow:
+
+Custom JavaScript execution
+Arbitrary scripts
+Database queries
+Server commands
+21. Controlled Action System
+
+Buttons should use predefined actions.
+
+Example:
+
+Button
+
+ ├── Open URL
+ ├── Open Project
+ ├── Scroll Section
+ ├── Send Email
+ ├── Download Resume
+ └── Open Contact Form
+
+Never:
+
+Run JavaScript
+
+This improves:
+
+Security
+Maintainability
+Reliability
+22. Code Quality Rules
+
+Agents must produce:
+
+Typed code
+Reusable components
+Clear naming
+Small functions
+Proper error handling
+Minimal duplication
+Maintainable architecture
+
+Avoid:
+
+Giant components
+Clever unnecessary abstractions
+Copy-paste logic
+23. Before Writing Code
+
+Agents must inspect the existing project first.
+
+Understand:
+
+Current architecture
+Components
+Dependencies
+Database models
+Naming conventions
+Styling system
+Existing patterns
+
+Never blindly overwrite existing work.
+
+24. Minimal Change Rule
+
+If the task is:
+
+Add project editing
+
+Do not redesign:
+
+Authentication
+Navigation
+Database architecture
+Entire UI system
+
+unless required.
+
+Make the smallest correct change.
+
+25. Production Over Demo
+
+Every feature must handle:
+
+Empty data
+Long names
+Missing images
+Invalid URLs
+Slow networks
+Failed requests
+Duplicate actions
+Unauthorized access
+Deleted records
+Unsaved changes
+Expired sessions
+Third-party failures
+
+Think:
+
+What happens when the user does something unexpected?
+
+26. Dependency Rules
+
+Before adding a dependency, verify:
+
+Is it necessary?
+Does the current stack already solve this?
+Is it maintained?
+Does it introduce security risks?
+Does it require paid services?
+Does it create vendor lock-in?
+
+Do not install packages because they are popular.
+
+27. Free-First Infrastructure Rule
+
+The project should prioritize:
+
+Free tiers
+Open-source tools
+Local development
+No-credit-card requirements
+
+Do not introduce paid services during MVP development unless absolutely necessary.
+
+A service requiring a credit card for activation should not be a default dependency.
+
+28. Initial Infrastructure Plan
+Frontend / Hosting
+Vercel
+
+Purpose:
+
+Deployment
+CDN
+Hosting
+Database
+
+Development:
+
+MySQL Community Edition
+
+Production:
+
+Hosted MySQL provider
+
+when needed.
+
+ORM
+Prisma
+
+Used for:
+
+Database models
+Type safety
+Migrations
+Email Strategy
+
+Development:
+
+Local SMTP / Email catcher
+
+Production:
+
+Use a transactional email provider that satisfies:
+
+Free tier
+No-credit-card requirement
+Proper authentication support
+
+Examples may change over time.
+
+Do not hardcode the application to one provider.
+
+29. Email Architecture
+
+Never spread email logic throughout the application.
+
+Use:
+
+Application
+
+      ↓
+
+Email Service
+
+      ↓
+
+Provider
+
+Examples:
+
+sendVerificationEmail()
+
+sendPasswordResetEmail()
+
+sendPortfolioPublishedEmail()
+
+Changing providers should not require rewriting application features.
+
+30. AI Architecture Rules
+
+AI features must use an abstraction layer.
+
+Never:
+
+Component
+    ↓
+Direct AI Provider Call
+
+Instead:
+
+Application
+
+      ↓
+
+AI Service
+
+      ↓
+
+AI Provider
+
+This allows changing:
+
+Groq
+Other providers
+Local models
+
+without rewriting the application.
+
+31. AI Security Rules
+
+AI must never have unrestricted access.
+
+Do not allow AI to:
+
+Execute arbitrary SQL
+Access all user data
+Modify sensitive information without permission
+Execute code
+
+AI actions must use controlled tools.
+
+Example:
+
+AI
+
+ ├── Suggest Bio
+ ├── Improve Project Description
+ ├── Suggest Layout
+ └── Analyze Portfolio
+32. Security Foundation
+
+Security begins from Phase 0.
+
+Always implement:
+
+Authentication
+Authorization
+Input validation
+Secure sessions
+Protected APIs
+Database safety
+Permission checks
+33. Authentication Rules
+
+Support secure:
+
+Password hashing
+Email verification
+Session management
+Password reset
+OAuth when needed
+
+Never store:
+
+Plain passwords
+Secrets in code
+34. Authorization Rules
+
+Authentication:
+
+Who are you?
+
+Authorization:
+
+What are you allowed to do?
+
+Every sensitive action requires authorization checks.
+
+35. Database Security
+
+Use:
+
+Parameterized queries
+ORM protections
+Input validation
+Least privilege database users
+
+Prevent:
+
+SQL injection
+Unauthorized access
+Data leaks
+36. File Upload Security
+
+For uploads:
+
+Upload
+
+ ↓
+
+Validate
+
+ ↓
+
+Check size
+
+ ↓
+
+Check type
+
+ ↓
+
+Store securely
+
+Never trust filenames.
+
+37. Secrets Management
+
+Never store:
+
+API keys
+Database passwords
+Tokens
+
+inside source code.
+
+Use environment variables.
+
+38. Environment Separation
+
+Maintain:
+
+Development
+
+↓
+
+Staging
+
+↓
+
+Production
+
+Never mix credentials.
+
+39. Testing Rules
+
+Test:
+
+Authentication
+Permissions
+Database operations
+Forms
+API routes
+Uploads
+Editor actions
+
+Security tests must verify:
+
+User A cannot access User B data
+40. Final Agent Rule
+
+You are working on a production application.
+
+Do not create:
+
+Demo-quality code
+Generic AI-generated UI
+Fake functionality
+Temporary hacks
+
+Prioritize:
+
+User experience
+Security
+Performance
+Maintainability
+Accessibility
+Professional design
+
+Think long-term.
+
+Build systems that can grow.
+
+Product Vision
+
+This platform is not just a portfolio builder.
+
+It is a student-owned professional identity system.
+
+Future phases may introduce:
+
+Advanced customization
+Visual editing
+University ecosystem
+Career network
+AI assistance
+Developer ecosystem
+Global identity
+Advanced security
+
+However:
+
+Build the current phase correctly before building the future.
+
+Do not overengineer.
+
+Do not sacrifice simplicity for imaginary scale.
+
+Build a product students can trust.
+
+41. Mobile App-Like Experience Priority
+
+The product must prioritize mobile users.
+
+The mobile experience must feel like a real application, not a responsive website.
+
+The primary mobile goal:
+
+The user should feel like they installed a professional app from the App Store or Play Store.
+
+42. Mobile-First Product Thinking
+
+Do not design desktop first and shrink it.
+
+Design important flows around mobile usage:
+
+Examples:
+
+Creating a portfolio
+Editing profile
+Uploading projects
+Managing skills
+Checking notifications
+Reviewing analytics
+Sharing portfolio
+
+The mobile experience must be designed intentionally.
+
+43. No Desktop Navigation Patterns on Mobile
+
+Avoid:
+
+Desktop navbar
+-----------------------
+Logo     Home About Profile Settings
+
+Mobile:
+☰ Menu
+
+This feels like a website.
+
+Do not rely on hamburger menus as the primary navigation pattern.
+
+44. Use Native Mobile Navigation Patterns
+
+Prefer app-like navigation:
+
+Examples:
+
+Bottom Navigation
+--------------------------------
+
+Home     Portfolio     Create     Profile
+
+--------------------------------
+
+or:
+
+Tab Navigation
+Projects
+Experience
+Skills
+Profile
+
+Navigation should be reachable with one hand.
+
+45. Mobile Interaction Priority
+
+Important actions should be thumb-friendly.
+
+Avoid:
+
+Tiny buttons
+Small touch targets
+Desktop-sized controls
+Hover-only interactions
+
+Minimum touch target:
+
+Approximately:
+
+44px × 44px
+46. Mobile Gestures
+
+Use familiar mobile interactions.
+
+Examples:
+
+Allowed:
+
+Swipe
+Pull refresh
+Bottom sheets
+Drag and drop
+Long press where appropriate
+Native scrolling behavior
+
+Avoid unnecessary custom gestures.
+
+47. Mobile Layout Rules
+
+Mobile screens should not simply stack desktop cards vertically.
+
+Bad:
+
+Desktop:
+
+[Card][Card][Card]
+
+
+Mobile:
+
+[Card]
+
+[Card]
+
+[Card]
+
+
+Instead, rethink the experience.
+
+Example:
+
+Mobile Portfolio Editor:
+
+Section
+ ↓
+Preview
+ ↓
+Edit
+ ↓
+Save
+48. Native-Like Components
+
+Prefer mobile-friendly patterns:
+
+Use:
+
+Bottom sheets
+Full-screen modals
+Native-like dialogs
+Swipe actions
+Sticky action bars
+
+Avoid:
+
+Desktop dropdowns
+Huge modal windows
+Tiny popovers
+49. PWA Requirements
+
+The PWA must behave like an installed application.
+
+Include:
+
+Installability
+App manifest
+App icons
+Splash screen
+Offline handling
+Proper viewport configuration
+Standalone display mode
+
+Example:
+
+{
+"display":"standalone"
+}
+
+The app should not open like a browser page.
+
+50. Mobile Performance Priority
+
+Mobile devices often have:
+
+Less memory
+Slower CPUs
+Limited bandwidth
+
+Optimize:
+
+Bundle size
+Images
+Animations
+Database requests
+API calls
+Initial loading
+
+Avoid:
+
+Heavy libraries without reason
+Large unnecessary dependencies
+51. Mobile Network Handling
+
+Assume users have unreliable internet.
+
+Handle:
+
+Slow connections
+Temporary offline states
+Failed uploads
+Interrupted saves
+Reconnection
+
+Example:
+
+Saving...
+
+Connection lost
+
+Retrying...
+
+Saved successfully
+52. Mobile App Feedback
+
+Apps need clear feedback.
+
+For actions:
+
+Example:
+
+Uploading:
+
+Uploading project image...
+
+70%
+
+Complete
+
+Saving:
+
+Saving changes...
+
+Saved
+
+Never leave users wondering if something happened.
+
+53. Device Features
+
+Use platform capabilities where appropriate.
+
+Possible future support:
+
+Camera upload
+File picker
+Share sheet
+Notifications
+Clipboard
+Biometric authentication (future)
+
+Do not force desktop workflows onto mobile.
+
+54. Mobile Editing Experience
+
+The portfolio editor must consider mobile creation.
+
+A student should be able to:
+
+Add a project
+Upload screenshots
+Edit descriptions
+Change sections
+Preview portfolio
+
+without needing a laptop.
+
+55. Mobile Visual Editor Rules
+
+The Canva-like editor must adapt.
+
+Desktop:
+
+Canvas + Sidebar + Controls
+
+Mobile:
+
+Preview
+
+↓
+
+Edit Panel
+
+↓
+
+Component Settings
+
+Do not shrink the desktop editor.
+
+56. Mobile Dashboard Design
+
+Avoid desktop dashboards.
+
+Bad:
+
+Sidebar
+Statistics Cards
+Tables
+Large Charts
+
+Mobile version:
+
+Overview
+
+Recent Activity
+
+Portfolio Status
+
+Quick Actions
+
+Profile Completion
+57. Tables on Mobile
+
+Avoid forcing desktop tables.
+
+Instead use:
+
+Cards
+Lists
+Expandable rows
+Bottom sheets
+
+Example:
+
+Desktop:
+
+Name | Role | Date | Status
+
+Mobile:
+
+John Doe
+Frontend Developer
+Updated yesterday
+View →
+58. Mobile Authentication Experience
+
+Authentication should feel app-like.
+
+Support:
+
+Password manager compatibility
+Autofill
+Remember sessions
+Passkeys in future
+Social login where appropriate
+
+Avoid:
+
+Long forms
+Multiple unnecessary steps
+59. Mobile Notifications
+
+Notifications should feel native.
+
+Examples:
+
+Portfolio published
+Recruiter viewed profile
+University announcement
+New message
+
+Avoid overwhelming users.
+
+60. Mobile Safe Areas
+
+Respect modern devices:
+
+Notches
+Dynamic islands
+Navigation bars
+Rounded screens
+
+Use proper safe-area handling.
+
+61. Mobile Accessibility
+
+Support:
+
+Screen readers
+Font scaling
+Larger touch targets
+Reduced motion
+High contrast
+
+The app must remain usable when users increase text size.
+
+62. Android and iOS Quality Standard
+
+The experience should be evaluated as if it were a native application.
+
+Ask:
+
+"Would this feel acceptable if downloaded from Google Play or the App Store?"
+
+If the answer is no:
+
+Improve it.
+
+63. No "Website Wrapped as App" Rule
+
+The application must avoid:
+
+Desktop navbar copied into mobile
+Browser-like layouts
+Tiny controls
+Excessive scrolling
+Website-style menus
+Desktop-first components
+
+The goal:
+
+Website quality
++
+Native app experience
+=
+Professional PWA
+64. Mobile Priority Product Principle
+
+The product should follow:
+
+Mobile experience first
+
+        ↓
+
+Tablet adaptation
+
+        ↓
+
+Desktop enhancement
+
+Not:
+
+Desktop website
+
+        ↓
+
+Mobile compression
+
+This fits your product vision better because students will probably access this platform mostly through their phones. A student creating a portfolio, updating skills, uploading projects, or sharing their profile should feel like they are using a career app, not opening a university website from 2015.

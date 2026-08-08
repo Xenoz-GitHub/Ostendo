@@ -1,0 +1,226 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Template {
+  MINIMAL
+  DEVELOPER
+  CREATIVE
+  EDITORIAL
+}
+
+enum SocialType {
+  GITHUB
+  LINKEDIN
+  INSTAGRAM
+  X
+  YOUTUBE
+  EMAIL
+  WEBSITE
+  OTHER
+}
+
+model User {
+  id              String              @id @default(cuid())
+  email           String              @unique
+  passwordHash    String
+  name            String?
+  avatarUrl       String?
+  emailVerifiedAt DateTime?
+  username        String?             @unique
+  createdAt       DateTime            @default(now())
+  updatedAt       DateTime            @updatedAt
+
+  profile           Profile?
+  projects          Project[]
+  education         Education[]
+  experience        Experience[]
+  skills            Skill[]
+  socialLinks       SocialLink[]
+  portfolio         Portfolio?
+  emailVerifications EmailVerification[]
+  passwordResets    PasswordReset[]
+  emailMessages     EmailMessage[]
+  contactMessages   ContactMessage[]
+}
+
+model Profile {
+  id            String   @id @default(cuid())
+  userId        String   @unique
+  headline      String?
+  bio           String?
+  university    String?
+  major         String?
+  graduationYear Int?
+  location      String?
+  contactEmail  String?
+  websiteUrl    String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Project {
+  id             String   @id @default(cuid())
+  userId         String
+  name           String
+  description    String?
+  coverImageUrl  String?
+  technologies   Json?
+  githubUrl      String?
+  demoUrl        String?
+  date           String?
+  role           String?
+  featured       Boolean  @default(false)
+  orderIndex     Int      @default(0)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Education {
+  id             String   @id @default(cuid())
+  userId         String
+  institution    String
+  degree         String?
+  field          String?
+  startYear      Int?
+  endYear        Int?
+  description    String?
+  orderIndex     Int      @default(0)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Experience {
+  id          String   @id @default(cuid())
+  userId      String
+  organization String
+  position    String
+  description String?
+  startMonth  String?
+  startYear   Int?
+  endMonth    String?
+  endYear     Int?
+  current     Boolean  @default(false)
+  orderIndex  Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Skill {
+  id         String   @id @default(cuid())
+  userId     String
+  name       String
+  orderIndex Int      @default(0)
+  createdAt  DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model SocialLink {
+  id         String     @id @default(cuid())
+  userId     String
+  type       SocialType
+  url        String
+  label      String?
+  visible    Boolean    @default(true)
+  orderIndex Int        @default(0)
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Portfolio {
+  id              String    @id @default(cuid())
+  userId          String    @unique
+  template        Template  @default(MINIMAL)
+  design          Json?
+  designPublished Json?
+  published       Boolean   @default(false)
+  publishedAt     DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model EmailVerification {
+  id        String    @id @default(cuid())
+  userId    String
+  tokenHash String
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([tokenHash])
+}
+
+model PasswordReset {
+  id        String    @id @default(cuid())
+  userId    String
+  tokenHash String
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([tokenHash])
+}
+
+model EmailMessage {
+  id        String   @id @default(cuid())
+  userId    String?
+  to        String
+  subject   String
+  provider  String
+  status    String   @default("sent")
+  error     String?
+  createdAt DateTime @default(now())
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+}
+
+model ContactMessage {
+  id           String    @id @default(cuid())
+  userId       String
+  visitorName  String
+  visitorEmail String
+  message      String
+  readAt       DateTime?
+  createdAt    DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([createdAt])
+}

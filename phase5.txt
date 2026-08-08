@@ -1,0 +1,645 @@
+Phase 5 — Professional Identity, Growth & Monetization
+
+Goal:
+Turn the student portfolio builder into a sustainable product while keeping the core experience free enough for students.
+
+At this stage, the platform isn't just:
+
+“Make a portfolio.”
+
+It becomes:
+
+“Build, manage, share, and grow your professional identity online.”
+
+The important thing is not to rush monetization. We should first have a genuinely useful free product, then introduce paid features that make sense.
+
+1. Custom Domains
+
+This should be one of the biggest Phase 5 features.
+
+Instead of:
+
+yourapp.vercel.app/crystal
+
+students can connect:
+
+crystalsantos.com
+
+or:
+
+crystal.dev
+
+The portfolio platform handles the connection.
+
+2. Domain Setup Wizard
+
+The student shouldn't need to understand DNS.
+
+Instead:
+
+Connect your domain
+
+1. Enter domain
+   crystalsantos.com
+
+2. Add DNS record
+
+   Type: CNAME
+   Name: www
+   Value: ...
+
+3. Verify domain
+
+   ✓ Connected
+
+The application explains exactly what they need to do.
+
+3. HTTPS
+
+Connected domains should automatically use HTTPS.
+
+The user shouldn't have to manually configure SSL certificates.
+
+4. Custom Branding
+
+Free portfolios can retain platform branding.
+
+For example:
+
+Built with YourPlatform
+
+A premium plan could allow:
+
+Remove platform branding
+
+This is a natural monetization point.
+
+5. Portfolio Analytics
+
+Students can see basic information about their website.
+
+For example:
+
+Portfolio Analytics
+
+Visitors
+1,284
+
+Views
+2,031
+
+Projects viewed
+734
+
+Resume downloads
+82
+6. Useful Analytics, Not Vanity Metrics
+
+Don't overwhelm students with complicated analytics.
+
+Focus on questions they actually care about:
+
+How many people visited my portfolio?
+
+Which projects are people looking at?
+
+Did someone view my resume?
+
+Where are my visitors coming from?
+
+Potential metrics:
+
+Visitors
+Page views
+Popular pages
+Popular projects
+Resume downloads
+Referrers
+Devices
+Countries/regions at a broad level
+7. Privacy-Friendly Analytics
+
+Analytics should be designed responsibly.
+
+Don't collect unnecessary personal information.
+
+The platform should have clear:
+
+Privacy policy
+Cookie behavior
+Analytics explanation
+Data retention policy
+
+And avoid building invasive tracking simply because it is technically possible.
+
+8. Resume Builder
+
+This is a very strong feature for students.
+
+The same portfolio data can generate a resume.
+
+For example:
+
+Portfolio Data
+      │
+      ├── Education
+      ├── Experience
+      ├── Skills
+      └── Projects
+             │
+             ▼
+        Resume Builder
+             │
+             ▼
+          PDF Resume
+
+Students shouldn't have to enter the same information twice.
+
+9. Resume Templates
+
+Provide professionally designed resume templates.
+
+For example:
+
+Minimal
+
+Simple and recruiter-friendly.
+
+Technical
+
+Projects and technical skills emphasized.
+
+Academic
+
+Education and research emphasized.
+
+Creative
+
+More visual while remaining professional.
+
+Again:
+
+No AI-slop design.
+
+No giant gradient names.
+
+No unnecessary graphics.
+
+No decorative progress bars saying:
+
+Java — 98%
+
+10. Resume ↔ Portfolio Synchronization
+
+This is extremely useful.
+
+Student changes:
+
+University
+
+in their profile.
+
+The portfolio updates.
+
+The resume updates.
+
+Student changes:
+
+Project description.
+
+Both can use the updated information.
+
+The student shouldn't maintain two completely separate datasets.
+
+11. Resume Download
+
+Students can generate:
+
+Download PDF
+
+and potentially:
+
+Print
+
+The generated document should be professionally formatted.
+
+12. AI Assistance
+
+This is where AI can become useful—but it should be assistive, not responsible for designing the entire product.
+
+Potential features:
+
+Improve bio
+
+Student writes:
+
+I like coding websites and making apps.
+
+AI suggests:
+
+Computer Science student passionate about building practical web applications and exploring modern software development.
+
+Improve project description
+
+Student enters:
+
+made a school event app
+
+AI helps turn it into a professional description.
+
+Generate resume bullets
+
+For example:
+
+Built a campus event management platform used by students to discover university activities.
+
+13. AI Portfolio Assistant
+
+Eventually:
+
+Improve my portfolio
+
+The assistant can analyze:
+
+Missing information
+Weak descriptions
+Inconsistent formatting
+Missing project links
+Missing resume
+SEO issues
+
+Example:
+
+Your portfolio has 3 projects, but only 1 includes a live demo.
+
+Your About section doesn't mention your field of study.
+
+Your GitHub profile hasn't been added.
+
+This is much more useful than simply:
+
+“Generate my portfolio.”
+
+14. AI Must Not Control the Editor Directly
+
+The AI should propose changes.
+
+For example:
+
+Suggested improvement
+
+Your project description could be clearer.
+
+Apply
+
+rather than silently changing the student's website.
+
+This preserves user control.
+
+15. SEO Assistant
+
+Give students a simple SEO dashboard.
+
+For example:
+
+SEO Health
+
+✓ Page title
+✓ Description
+✓ Social image
+✓ Mobile responsive
+✓ HTTPS
+
+⚠ Add descriptions to 2 projects
+
+This makes SEO understandable to students who know nothing about it.
+
+16. Portfolio Health
+
+Create a simple score/checklist.
+
+For example:
+
+Portfolio readiness
+
+████████░░ 82%
+
+✓ Profile photo
+✓ About section
+✓ 3 projects
+✓ Education
+✓ Contact information
+⚠ Add GitHub link
+⚠ Add project descriptions
+
+Don't make this a meaningless gamification system.
+
+It should provide genuinely useful guidance.
+
+17. Share Tools
+
+Students should easily be able to share their portfolio.
+
+Actions:
+
+Copy link
+Share
+Copy social preview
+Download QR code
+
+Potentially:
+
+        QR CODE
+
+   yourapp.vercel.app/crystal
+
+       [ Download ]
+
+Useful for:
+
+Resumes
+Job fairs
+School events
+Business cards
+Presentations
+18. QR Code
+
+A student can generate a QR code for their portfolio.
+
+The QR code should point to their stable portfolio URL.
+
+If they later change templates, the QR code doesn't need to change.
+
+19. Custom Social Preview
+
+Allow students to control what appears when their portfolio is shared.
+
+For example:
+
+Title:
+Crystal Santos — Computer Science Student
+
+Description:
+Software developer and student...
+
+Image:
+[ Upload preview ]
+20. Public Portfolio Insights
+
+Potentially give students a simple notification:
+
+Your portfolio received 12 visits this week.
+
+But avoid unnecessary notification spam.
+
+21. Premium Plans
+
+Only after the free product is genuinely useful.
+
+Potential structure:
+
+Free
+Portfolio
+Student URL
+Templates
+Visual editor
+Basic customization
+Projects
+Resume
+Basic SEO
+Pro
+
+Potentially:
+
+Custom domain
+Remove platform branding
+Advanced analytics
+Premium templates
+Advanced components
+More AI assistance
+Additional storage
+Advanced SEO
+
+The exact pricing can be decided later.
+
+22. Keep Students at the Center
+
+A major principle:
+
+Don't paywall the student's basic professional identity.
+
+A student should be able to make a respectable portfolio without paying.
+
+Premium features should primarily provide:
+
+Convenience
+Advanced customization
+Professional infrastructure
+Analytics
+Extra storage
+Custom domains
+Advanced tools
+
+rather than:
+
+“Pay $5 to add your second project.”
+
+That would undermine the product's purpose.
+
+23. Billing
+
+Only introduce billing when there is actually something worth paying for.
+
+Potential infrastructure:
+
+User
+ ↓
+Plan
+ ↓
+Subscription
+ ↓
+Features
+
+The application should have a central entitlement system.
+
+For example:
+
+canUseCustomDomain
+canRemoveBranding
+canUseAdvancedAnalytics
+canUsePremiumTemplates
+
+Don't scatter checks like:
+
+if user.plan === "pro"
+
+everywhere.
+
+24. Usage Limits
+
+Premium features may have limits.
+
+Potential examples:
+
+Storage
+AI generations
+Analytics history
+Number of websites
+Number of custom domains
+
+But limits should be understandable.
+
+Avoid surprise restrictions.
+
+25. Storage
+
+At this stage, image and file storage becomes important.
+
+Students may upload:
+
+Profile images
+Project screenshots
+Resume PDFs
+Videos
+Portfolio assets
+
+We should separate:
+
+Database
+
+from:
+
+File/object storage
+
+MySQL should store metadata/references rather than large binary files wherever practical.
+
+26. MySQL Plan
+
+Continue using:
+
+MySQL + Prisma
+
+MySQL remains responsible for structured application data:
+
+Users
+Websites
+Projects
+Pages
+Components
+Themes
+Domains
+Analytics metadata
+Subscriptions
+Resume data
+
+Files should generally live in an appropriate object/file storage system rather than being shoved directly into MySQL.
+
+27. Vercel Plan
+
+Vercel remains the primary application platform.
+
+GitHub
+   ↓
+Vercel
+   ↓
+Application
+   ↓
+Prisma
+   ↓
+Hosted MySQL
+
+For the beginning of this phase, we can continue using free tiers where practical.
+
+However, custom domains, file storage, analytics, AI, and increased traffic may eventually create real infrastructure costs.
+
+At that point, the product should ideally have enough users or revenue to justify those costs.
+
+28. PWA
+
+The dashboard becomes a mature installable PWA.
+
+Students can:
+
+Manage their website
+Edit their resume
+Check analytics
+Manage projects
+Update their profile
+Receive useful notifications
+
+The public portfolio remains optimized as a normal website.
+
+29. Security Becomes More Important
+
+Once payments, domains, analytics, and files exist, security requirements increase significantly.
+
+We need to carefully protect:
+
+Account sessions
+Domain ownership
+Payment information
+Uploaded files
+Private drafts
+Analytics data
+AI-generated content
+User permissions
+
+A student should never be able to access another student's private dashboard or draft.
+
+30. What Phase 5 Does NOT Include
+
+Still avoid:
+
+❌ Social network
+❌ Following users
+❌ Likes
+❌ Comments
+❌ Public messaging
+❌ University administration
+❌ Recruiter marketplace
+❌ Job marketplace
+❌ Real-time collaboration
+❌ Plugin marketplace
+
+Those are separate products and can distract from the core platform.
+
+Phase 5 Success Criteria
+
+A student can now:
+
+Create portfolio
+      ↓
+Customize it
+      ↓
+Build multiple pages
+      ↓
+Publish
+      ↓
+Connect custom domain
+      ↓
+Generate resume
+      ↓
+Improve content with AI
+      ↓
+Optimize SEO
+      ↓
+Share portfolio
+      ↓
+See useful analytics
+
+And the platform finally has a realistic path toward sustainability:
+
+FREE
+ ↓
+Useful portfolio
+ ↓
+Student gets value
+ ↓
+Student wants more
+ ↓
+PRO
+ ↓
+Custom domain
+Analytics
+Advanced tools
+AI
