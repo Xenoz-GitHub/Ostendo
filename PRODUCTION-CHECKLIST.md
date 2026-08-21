@@ -1,7 +1,7 @@
 # Production Deployment Checklist for Ostendo
 
-**Production URL:** https://ostendo-ashen.vercel.app  
-**Portfolio URLs:** https://ostendo-ashen.vercel.app/[username]
+**Production URL:** https://ostendo-one.vercel.app  
+**Portfolio URLs:** https://ostendo-one.vercel.app/[username]
 
 ---
 
@@ -17,7 +17,7 @@ Verify all required environment variables are set in **Vercel Project Settings â
 |----------|-------|-------|
 | `DATABASE_URL` | `mysql://[user]:[pass]@[host]:3306/ostendo` | Production MySQL connection string |
 | `SESSION_SECRET` | `bvxah+n61T5/XfNG1n5RHH3Fhm0netLMCo7H7tyZ67nlhnAs2oruE8oHPlHWwCxX` | **CRITICAL:** Must match your local value for session continuity |
-| `APP_URL` | `https://ostendo-ashen.vercel.app` | Your production domain |
+| `APP_URL` | `https://ostendo-one.vercel.app` | Your production domain |
 | `EMAIL_PROVIDER` | `console` or `resend` | Use `console` for testing, `resend` for production emails |
 | `IMGBB_API_KEYS` | Your comma-separated keys | All 9 ImgBB API keys from your local .env |
 | `NODE_ENV` | `production` | Usually auto-set by Vercel |
@@ -27,7 +27,7 @@ Verify all required environment variables are set in **Vercel Project Settings â
 | Variable | Value | Notes |
 |----------|-------|-------|
 | `RESEND_API_KEY` | `re_...` | Only if using `EMAIL_PROVIDER="resend"` |
-| `EMAIL_FROM` | `Ostendo <noreply@ostendo-ashen.vercel.app>` | Sender address for emails |
+| `EMAIL_FROM` | `Ostendo <noreply@ostendo-one.vercel.app>` | Sender address for emails |
 
 ---
 
@@ -85,7 +85,7 @@ In **Vercel Project Settings â†’ Build & Development Settings**:
 ### 5. Domain Configuration
 
 **Current Setup:**
-- Primary: `ostendo-ashen.vercel.app` (Vercel subdomain)
+- Primary: `ostendo-one.vercel.app` (Vercel subdomain)
 - SSL: Automatic (Vercel provides free SSL)
 
 **If using custom domain (e.g., ostendo.com):**
@@ -128,16 +128,16 @@ vercel --prod
 ### Critical Path Tests
 
 #### 1. Homepage & Redirects
-- [ ] Visit https://ostendo-ashen.vercel.app
+- [ ] Visit https://ostendo-one.vercel.app
 - [ ] Should redirect to `/login` or `/dashboard` based on auth state
 - [ ] Verify no console errors
 
 #### 2. Authentication Flow
-- [ ] **Signup:** https://ostendo-ashen.vercel.app/signup
+- [ ] **Signup:** https://ostendo-one.vercel.app/signup
   - [ ] Create new account
   - [ ] Verify email verification email is sent (check server logs if using `console` provider)
   - [ ] Should redirect to `/onboarding`
-- [ ] **Login:** https://ostendo-ashen.vercel.app/login
+- [ ] **Login:** https://ostendo-one.vercel.app/login
   - [ ] Sign in with created account
   - [ ] Should redirect to `/dashboard`
 - [ ] **Logout:** Click user menu â†’ Sign out
@@ -154,13 +154,13 @@ vercel --prod
 - [ ] Choose a template (`/dashboard/template`)
 - [ ] Customize design (`/dashboard/design`)
 - [ ] Click "Publish portfolio"
-- [ ] Visit public portfolio: https://ostendo-ashen.vercel.app/[your-username]
+- [ ] Visit public portfolio: https://ostendo-one.vercel.app/[your-username]
 - [ ] Verify it's publicly accessible (open in incognito)
 
 #### 5. SEO & Meta Tags
-- [ ] Visit https://ostendo-ashen.vercel.app/robots.txt
+- [ ] Visit https://ostendo-one.vercel.app/robots.txt
   - [ ] Should show proper robot rules
-- [ ] Visit https://ostendo-ashen.vercel.app/sitemap.xml
+- [ ] Visit https://ostendo-one.vercel.app/sitemap.xml
   - [ ] Should list homepage and published portfolios
 - [ ] Check a portfolio in social preview tools:
   - https://cards-dev.twitter.com/validator

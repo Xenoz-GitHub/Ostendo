@@ -10,7 +10,7 @@
 
 **Date:** August 22, 2026  
 **Status:** LIVE & READY  
-**Production URL:** https://ostendo-ashen.vercel.app
+**Production URL:** https://ostendo-one.vercel.app
 
 ---
 
@@ -22,7 +22,7 @@ Platform:     Vercel
 Status:       ● Ready
 Build Time:   24 seconds
 Deployment:   ostendo-qj3malo4l-xenoz-githubs-projects.vercel.app
-Live URL:     https://ostendo-ashen.vercel.app
+Live URL:     https://ostendo-one.vercel.app
 ```
 
 ### What Was Deployed
@@ -48,22 +48,22 @@ Live URL:     https://ostendo-ashen.vercel.app
 
 ### Main Application
 ```
-Homepage:       https://ostendo-ashen.vercel.app
-Sign Up:        https://ostendo-ashen.vercel.app/signup
-Login:          https://ostendo-ashen.vercel.app/login
-Dashboard:      https://ostendo-ashen.vercel.app/dashboard
+Homepage:       https://ostendo-one.vercel.app
+Sign Up:        https://ostendo-one.vercel.app/signup
+Login:          https://ostendo-one.vercel.app/login
+Dashboard:      https://ostendo-one.vercel.app/dashboard
 ```
 
 ### User Portfolios
 ```
-Format:         https://ostendo-ashen.vercel.app/[username]
-Example:        https://ostendo-ashen.vercel.app/john-smith
+Format:         https://ostendo-one.vercel.app/[username]
+Example:        https://ostendo-one.vercel.app/john-smith
 ```
 
 ### SEO Files
 ```
-Robots:         https://ostendo-ashen.vercel.app/robots.txt
-Sitemap:        https://ostendo-ashen.vercel.app/sitemap.xml
+Robots:         https://ostendo-one.vercel.app/robots.txt
+Sitemap:        https://ostendo-one.vercel.app/sitemap.xml
 ```
 
 ---
@@ -73,7 +73,7 @@ Sitemap:        https://ostendo-ashen.vercel.app/sitemap.xml
 All production environment variables are configured in Vercel:
 - ✅ DATABASE_URL (production MySQL)
 - ✅ SESSION_SECRET
-- ✅ APP_URL (https://ostendo-ashen.vercel.app)
+- ✅ APP_URL (https://ostendo-one.vercel.app)
 - ✅ EMAIL_PROVIDER (console)
 - ✅ IMGBB_API_KEYS (9 keys configured)
 
@@ -146,7 +146,7 @@ Uptime:               99.9%
 ```
 [ ✓ ] Account creation & authentication
 [ ✓ ] Email verification
-[ ✓ ] Username claiming (ostendo-ashen.vercel.app/username)
+[ ✓ ] Username claiming (ostendo-one.vercel.app/username)
 [ ✓ ] Profile management
 [ ✓ ] Project showcase
 [ ✓ ] Education & experience
@@ -276,7 +276,7 @@ All documentation is in the repository:
 ## Contact & Support
 
 **Issues:** https://github.com/Xenoz-GitHub/Ostendo/issues  
-**Production URL:** https://ostendo-ashen.vercel.app  
+**Production URL:** https://ostendo-one.vercel.app  
 **Vercel Dashboard:** vercel.com/xenoz-githubs-projects/ostendo
 
 ---
@@ -289,4 +289,4 @@ All documentation is in the repository:
 
 **Your portfolio platform is now live and ready for users!**
 
-Users can sign up at: **https://ostendo-ashen.vercel.app/signup**
+Users can sign up at: **https://ostendo-one.vercel.app/signup**

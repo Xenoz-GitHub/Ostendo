@@ -4,13 +4,13 @@
 
 | Type | URL |
 |------|-----|
-| **Main App** | https://ostendo-ashen.vercel.app |
-| **User Portfolio** | https://ostendo-ashen.vercel.app/[username] |
-| **Login** | https://ostendo-ashen.vercel.app/login |
-| **Signup** | https://ostendo-ashen.vercel.app/signup |
-| **Dashboard** | https://ostendo-ashen.vercel.app/dashboard |
-| **Robots** | https://ostendo-ashen.vercel.app/robots.txt |
-| **Sitemap** | https://ostendo-ashen.vercel.app/sitemap.xml |
+| **Main App** | https://ostendo-one.vercel.app |
+| **User Portfolio** | https://ostendo-one.vercel.app/[username] |
+| **Login** | https://ostendo-one.vercel.app/login |
+| **Signup** | https://ostendo-one.vercel.app/signup |
+| **Dashboard** | https://ostendo-one.vercel.app/dashboard |
+| **Robots** | https://ostendo-one.vercel.app/robots.txt |
+| **Sitemap** | https://ostendo-one.vercel.app/sitemap.xml |
 
 ---
 
@@ -20,7 +20,7 @@
 |----------|------------------|-------|
 | `DATABASE_URL` | `mysql://[prod-db]` | ⚠️ Use production MySQL, not localhost |
 | `SESSION_SECRET` | `bvxah+n61T5/XfN...` | ⚠️ MUST match local .env |
-| `APP_URL` | `https://ostendo-ashen.vercel.app` | Your production domain |
+| `APP_URL` | `https://ostendo-one.vercel.app` | Your production domain |
 | `EMAIL_PROVIDER` | `console` or `resend` | console = logs, resend = real emails |
 | `IMGBB_API_KEYS` | `[9 comma-separated keys]` | Copy from local .env |
 | `NODE_ENV` | `production` | Auto-set by Vercel |
@@ -61,10 +61,10 @@ npx prisma generate
 ## 🧪 Quick Test Checklist
 
 After deployment, verify:
-- [ ] https://ostendo-ashen.vercel.app loads (redirects to login)
+- [ ] https://ostendo-one.vercel.app loads (redirects to login)
 - [ ] Signup works
 - [ ] Can create and publish portfolio
-- [ ] Public portfolio accessible: https://ostendo-ashen.vercel.app/[username]
+- [ ] Public portfolio accessible: https://ostendo-one.vercel.app/[username]
 - [ ] `/robots.txt` and `/sitemap.xml` load
 - [ ] Contact form works
 

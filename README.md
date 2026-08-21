@@ -15,7 +15,7 @@
 
 <div align="center">
 
-**Live Platform:** [ostendo-ashen.vercel.app](https://ostendo-ashen.vercel.app)
+**Live Platform:** [ostendo-one.vercel.app](https://ostendo-one.vercel.app)
 
 A modern portfolio platform designed specifically for students to showcase their work, 
 claim their personal URL, and share their achievements with the world.
@@ -33,7 +33,7 @@ claim their personal URL, and share their achievements with the world.
 │  Before Ostendo          →          After Ostendo           │
 ├─────────────────────────────────────────────────────────────┤
 │  No portfolio            →    Your own website               │
-│  Hidden on resume        →    ostendo-ashen.vercel.app/yourname   │
+│  Hidden on resume        →    ostendo-one.vercel.app/yourname   │
 │  Hard to share work      →    One link to everything         │
 │  Hours of coding         →    5 minutes to publish           │
 └─────────────────────────────────────────────────────────────┘
@@ -46,7 +46,7 @@ claim their personal URL, and share their achievements with the world.
 ### [ Personal URL ]
 ```
 Get your own branded URL:
-ostendo-ashen.vercel.app/your-name
+ostendo-one.vercel.app/your-name
 
 Perfect for resumes, LinkedIn, and email signatures
 ```
@@ -91,7 +91,7 @@ Perfect for resumes, LinkedIn, and email signatures
 ╠════════════════════════════════════════════════════════════════╣
 ║  Step 2  >>>  Choose Username                                  ║
 ║  ─────────────────────────────────────────────────────────     ║
-║  Pick your personal URL: ostendo-ashen.vercel.app/[yourname]         ║
+║  Pick your personal URL: ostendo-one.vercel.app/[yourname]         ║
 ╠════════════════════════════════════════════════════════════════╣
 ║  Step 3  >>>  Add Your Content                                 ║
 ║  ─────────────────────────────────────────────────────────     ║
@@ -165,15 +165,15 @@ Visit these example portfolios to see what you can create:
 ```
 ════════════════════════════════════════════════════════════════
   Developer Portfolio
-  >>> ostendo-ashen.vercel.app/jane-developer
+  >>> ostendo-one.vercel.app/jane-developer
   Clean, technical layout with GitHub integrations
 ════════════════════════════════════════════════════════════════
   Creative Portfolio
-  >>> ostendo-ashen.vercel.app/alex-creative
+  >>> ostendo-one.vercel.app/alex-creative
   Bold, visual-first design for designers
 ════════════════════════════════════════════════════════════════
   Minimal Portfolio
-  >>> ostendo-ashen.vercel.app/john-minimal
+  >>> ostendo-one.vercel.app/john-minimal
   Simple, elegant, professional
 ════════════════════════════════════════════════════════════════
 ```
@@ -206,7 +206,7 @@ Visit these example portfolios to see what you can create:
 
 ### 1. Create Your Account
 
-Visit **[ostendo-ashen.vercel.app/signup](https://ostendo-ashen.vercel.app/signup)**
+Visit **[ostendo-one.vercel.app/signup](https://ostendo-one.vercel.app/signup)**
 
 ```
 Enter your:
@@ -258,7 +258,7 @@ Customize:
 Click **"Publish Portfolio"** and your site goes live at:
 
 ```
-https://ostendo-ashen.vercel.app/[your-username]
+https://ostendo-one.vercel.app/[your-username]
 ```
 
 ---
@@ -268,7 +268,7 @@ https://ostendo-ashen.vercel.app/[your-username]
 ### Personal URL
 ```
 Your portfolio lives at a clean, memorable URL:
-  >>> ostendo-ashen.vercel.app/your-name
+  >>> ostendo-one.vercel.app/your-name
 
 Perfect for:
   //  Resume headers
@@ -384,7 +384,7 @@ no credit card required. All features included.
 
 ### Can I use my own domain?
 ```
-Currently, all portfolios use ostendo-ashen.vercel.app/[username].
+Currently, all portfolios use ostendo-one.vercel.app/[username].
 Custom domains may be added in the future.
 ```
 
@@ -504,7 +504,7 @@ Help us improve by:
 | Account problems        | Settings > Help & Support                |
 | Technical bugs          | GitHub Issues                            |
 | Feature requests        | GitHub Discussions                       |
-| General questions       | Contact form on ostendo-ashen.vercel.app       |
+| General questions       | Contact form on ostendo-one.vercel.app       |
 
 ---
 
@@ -534,7 +534,7 @@ for students building their professional presence online.
 ═══════════════════════════════════════════════════════════
 ```
 
-**[Get Started](https://ostendo-ashen.vercel.app/signup)**  ·  **[View Examples](https://ostendo-ashen.vercel.app)**  ·  **[Learn More](https://ostendo-ashen.vercel.app)**
+**[Get Started](https://ostendo-one.vercel.app/signup)**  ·  **[View Examples](https://ostendo-one.vercel.app)**  ·  **[Learn More](https://ostendo-one.vercel.app)**
 
 ```
 ────────────────────────────────────────────────────────────
@@ -542,6 +542,6 @@ for students building their professional presence online.
 ────────────────────────────────────────────────────────────
 ```
 
-**ostendo-ashen.vercel.app**
+**ostendo-one.vercel.app**
 
 </div>

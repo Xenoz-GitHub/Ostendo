@@ -1,7 +1,7 @@
 # Production Deployment Notes
 
 **Date:** 2026-08-22  
-**Production URL:** https://ostendo-ashen.vercel.app  
+**Production URL:** https://ostendo-one.vercel.app  
 **Environment:** Vercel (Hobby Plan)
 
 ---
@@ -9,9 +9,9 @@
 ## 🎯 Your Current Setup
 
 ### URLs
-- **Main App:** https://ostendo-ashen.vercel.app
-- **User Portfolios:** https://ostendo-ashen.vercel.app/[username]
-- **Example:** If user chooses username "john-doe", their portfolio will be at `https://ostendo-ashen.vercel.app/john-doe`
+- **Main App:** https://ostendo-one.vercel.app
+- **User Portfolios:** https://ostendo-one.vercel.app/[username]
+- **Example:** If user chooses username "john-doe", their portfolio will be at `https://ostendo-one.vercel.app/john-doe`
 
 ### Environment Variables (from your .env)
 Your local `.env` shows:
@@ -54,7 +54,7 @@ If you change this in production, all existing sessions will be invalidated and 
 
 ### 3. APP_URL
 ```
-https://ostendo-ashen.vercel.app
+https://ostendo-one.vercel.app
 ```
 
 **Note:** The app auto-detects the URL from Vercel headers, so this is mainly a fallback. But set it anyway for consistency.
@@ -78,7 +78,7 @@ Requires additional setup:
 3. Get API key
 4. Add these environment variables:
    - `RESEND_API_KEY`: Your API key
-   - `EMAIL_FROM`: `Ostendo <noreply@ostendo-ashen.vercel.app>`
+   - `EMAIL_FROM`: `Ostendo <noreply@ostendo-one.vercel.app>`
 
 ### 5. IMGBB_API_KEYS
 Copy all 9 keys from your local .env:
@@ -182,12 +182,12 @@ vercel --prod
 ### Immediate Checks (first 5 minutes)
 
 1. **Basic Load**
-   - Visit https://ostendo-ashen.vercel.app
+   - Visit https://ostendo-one.vercel.app
    - Should redirect to login
    - No visible errors
 
 2. **Signup Flow**
-   - Go to https://ostendo-ashen.vercel.app/signup
+   - Go to https://ostendo-one.vercel.app/signup
    - Create a test account
    - Should redirect to onboarding
 
@@ -199,12 +199,12 @@ vercel --prod
    - Add some content (project, bio)
    - Choose template
    - Publish portfolio
-   - Visit https://ostendo-ashen.vercel.app/[your-username]
+   - Visit https://ostendo-one.vercel.app/[your-username]
    - Should be publicly accessible (test in incognito)
 
 5. **SEO Files**
-   - Visit https://ostendo-ashen.vercel.app/robots.txt
-   - Visit https://ostendo-ashen.vercel.app/sitemap.xml
+   - Visit https://ostendo-one.vercel.app/robots.txt
+   - Visit https://ostendo-one.vercel.app/sitemap.xml
    - Both should load without errors
 
 ### Detailed Testing (next 30 minutes)
@@ -310,10 +310,10 @@ If you see slower performance:
 
 Once deployed, your users will have portfolios like:
 
-- **Minimal Template:** https://ostendo-ashen.vercel.app/john-smith
-- **Developer Template:** https://ostendo-ashen.vercel.app/jane-developer
-- **Creative Template:** https://ostendo-ashen.vercel.app/alex-creative
-- **Editorial Template:** https://ostendo-ashen.vercel.app/sam-writer
+- **Minimal Template:** https://ostendo-one.vercel.app/john-smith
+- **Developer Template:** https://ostendo-one.vercel.app/jane-developer
+- **Creative Template:** https://ostendo-one.vercel.app/alex-creative
+- **Editorial Template:** https://ostendo-one.vercel.app/sam-writer
 
 Each with their own:
 - Custom URL
