@@ -2,8 +2,8 @@
 
 **Date:** 2026-08-22  
 **Application:** Ostendo Student Portfolio Platform  
-**Production URL:** https://ostendo.vercel.app  
-**Portfolio URLs:** https://ostendo.vercel.app/[username]  
+**Production URL:** https://ostendo-ashen.vercel.app  
+**Portfolio URLs:** https://ostendo-ashen.vercel.app/[username]  
 **Status:** ✅ High-priority improvements implemented
 
 ---

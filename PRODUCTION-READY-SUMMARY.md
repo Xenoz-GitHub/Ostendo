@@ -1,7 +1,7 @@
 # 🎉 Production Ready Summary
 
 **Your Application:** Ostendo Student Portfolio Platform  
-**Production URL:** https://ostendo.vercel.app  
+**Production URL:** https://ostendo-ashen.vercel.app  
 **Status:** ✅ **Ready for Production Deployment**
 
 ---
@@ -31,13 +31,13 @@ You now have complete deployment guides:
 
 ### URLs Structure
 ```
-Main App:        https://ostendo.vercel.app
-User Portfolios: https://ostendo.vercel.app/[username]
+Main App:        https://ostendo-ashen.vercel.app
+User Portfolios: https://ostendo-ashen.vercel.app/[username]
 
 Examples:
-- https://ostendo.vercel.app/john-smith
-- https://ostendo.vercel.app/jane-dev
-- https://ostendo.vercel.app/alex-designer
+- https://ostendo-ashen.vercel.app/john-smith
+- https://ostendo-ashen.vercel.app/jane-dev
+- https://ostendo-ashen.vercel.app/alex-designer
 ```
 
 ### Current Local Environment (from your .env)
@@ -76,7 +76,7 @@ Add these variables:
 |----------|-------|-----------------|
 | `DATABASE_URL` | Your production MySQL URL | From Step 1 (PlanetScale/Railway) |
 | `SESSION_SECRET` | `bvxah+n61T5/XfNG1n5RHH3Fhm0netLMCo7H7tyZ67nlhnAs2oruE8oHPlHWwCxX` | ⚠️ Must match your local .env |
-| `APP_URL` | `https://ostendo.vercel.app` | Your production domain |
+| `APP_URL` | `https://ostendo-ashen.vercel.app` | Your production domain |
 | `EMAIL_PROVIDER` | `console` | Start with console, upgrade to resend later |
 | `IMGBB_API_KEYS` | [Your 9 keys from .env] | Copy from local .env |
 
@@ -94,16 +94,16 @@ Vercel will automatically:
 1. Pull your code
 2. Install dependencies
 3. Run build
-4. Deploy to https://ostendo.vercel.app
+4. Deploy to https://ostendo-ashen.vercel.app
 
 ### Step 4: Test Production
 Follow the quick test checklist:
-1. Visit https://ostendo.vercel.app (should redirect to login)
+1. Visit https://ostendo-ashen.vercel.app (should redirect to login)
 2. Create a test account
 3. Complete onboarding with a username
 4. Add content (project, bio, photo)
 5. Publish portfolio
-6. Visit https://ostendo.vercel.app/[your-username] in incognito
+6. Visit https://ostendo-ashen.vercel.app/[your-username] in incognito
 7. Verify contact form works
 
 **Full testing guide:** See `PRODUCTION-CHECKLIST.md`
@@ -307,12 +307,12 @@ git push origin main
 
 **Your production URL:**
 ```
-https://ostendo.vercel.app
+https://ostendo-ashen.vercel.app
 ```
 
 **Your first test user portfolio:**
 ```
-https://ostendo.vercel.app/[choose-your-username]
+https://ostendo-ashen.vercel.app/[choose-your-username]
 ```
 
 ---
