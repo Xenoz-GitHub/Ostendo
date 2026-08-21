@@ -39,6 +39,7 @@ export function Button({
       className={cn(
         'inline-flex select-none items-center justify-center rounded-lg font-medium transition-colors',
         'disabled:pointer-events-none disabled:opacity-50',
+        loading && 'relative',
         variantClasses[variant],
         sizeClasses[size],
         className
@@ -46,8 +47,12 @@ export function Button({
       disabled={props.disabled || loading}
       {...props}
     >
-      {loading && <Loader2 className="size-4 animate-spin" aria-hidden />}
-      {children}
+      {loading && (
+        <span className="absolute inset-0 flex items-center justify-center">
+          <Loader2 className="size-4 animate-spin" aria-hidden />
+        </span>
+      )}
+      <span className={cn(loading && 'invisible')}>{children}</span>
     </button>
   )
 }

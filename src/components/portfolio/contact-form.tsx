@@ -25,7 +25,14 @@ export function ContactForm({ portfolioOwnerId }: { portfolioOwnerId: string }) 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <Label htmlFor="contact-name">Your name</Label>
-          <Input id="contact-name" name="name" placeholder="Jane Doe" autoComplete="name" required />
+          <Input 
+            id="contact-name" 
+            name="name" 
+            placeholder="Jane Doe" 
+            autoComplete="name" 
+            aria-required="true"
+            required 
+          />
         </div>
         <div>
           <Label htmlFor="contact-email">Your email</Label>
@@ -33,8 +40,10 @@ export function ContactForm({ portfolioOwnerId }: { portfolioOwnerId: string }) 
             id="contact-email"
             name="email"
             type="email"
+            inputMode="email"
             placeholder="jane@example.com"
             autoComplete="email"
+            aria-required="true"
             required
           />
         </div>
@@ -46,8 +55,13 @@ export function ContactForm({ portfolioOwnerId }: { portfolioOwnerId: string }) 
           name="message"
           rows={5}
           placeholder="Hi, I found your portfolio and wanted to reach out…"
+          aria-required="true"
+          aria-describedby="contact-message-hint"
           required
         />
+        <p id="contact-message-hint" className="sr-only">
+          Write your message to the portfolio owner. They will receive your email address to reply.
+        </p>
       </div>
       <div>
         <SubmitButton pendingLabel="Sending…">Send message</SubmitButton>

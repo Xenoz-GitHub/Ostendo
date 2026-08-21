@@ -1,5 +1,11 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { LogoLink } from '@/components/brand'
+
+export const metadata: Metadata = {
+  title: 'Page Not Found',
+  description: 'This page could not be found.',
+}
 
 export default function NotFound() {
   return (

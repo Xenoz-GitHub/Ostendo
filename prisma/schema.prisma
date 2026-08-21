@@ -47,6 +47,9 @@ model User {
   passwordResets    PasswordReset[]
   emailMessages     EmailMessage[]
   contactMessages   ContactMessage[]
+
+  @@index([username])
+  @@index([email])
 }
 
 model Profile {
@@ -72,7 +75,7 @@ model Project {
   id             String   @id @default(cuid())
   userId         String
   name           String
-  description    String?
+  description    String?  @db.Text
   coverImageUrl  String?
   technologies   Json?
   githubUrl      String?
@@ -87,6 +90,8 @@ model Project {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
+  @@index([userId, featured])
+  @@index([userId, orderIndex])
 }
 
 model Education {
@@ -97,7 +102,7 @@ model Education {
   field          String?
   startYear      Int?
   endYear        Int?
-  description    String?
+  description    String?  @db.Text
   orderIndex     Int      @default(0)
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
@@ -105,6 +110,7 @@ model Education {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
+  @@index([userId, orderIndex])
 }
 
 model Experience {
@@ -112,7 +118,7 @@ model Experience {
   userId      String
   organization String
   position    String
-  description String?
+  description String?  @db.Text
   startMonth  String?
   startYear   Int?
   endMonth    String?
@@ -125,6 +131,7 @@ model Experience {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
+  @@index([userId, orderIndex])
 }
 
 model Skill {
@@ -137,6 +144,7 @@ model Skill {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
+  @@index([userId, orderIndex])
 }
 
 model SocialLink {
@@ -153,6 +161,8 @@ model SocialLink {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
+  @@index([userId, visible])
+  @@index([userId, orderIndex])
 }
 
 model Portfolio {
@@ -167,6 +177,9 @@ model Portfolio {
   updatedAt       DateTime  @updatedAt
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([published])
+  @@index([published, userId])
 }
 
 model EmailVerification {
@@ -215,12 +228,24 @@ model ContactMessage {
   userId       String
   visitorName  String
   visitorEmail String
-  message      String
+  message      String    @db.Text
   readAt       DateTime?
   createdAt    DateTime  @default(now())
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
-  @@index([createdAt])
+  @@index([userId, readAt])
+  @@index([userId, createdAt])
+}
+
+model RateLimit {
+  id        String   @id @default(cuid())
+  key       String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([key])
+  @@index([key, createdAt])
+  @@index([expiresAt])
 }

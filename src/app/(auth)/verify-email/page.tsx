@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { CheckCircle2, XCircle } from 'lucide-react'
+import { CheckCircle2, XCircle, Mail } from 'lucide-react'
 import { verifyEmail } from '@/actions/auth'
 import { getSessionUser } from '@/lib/auth'
 
@@ -12,11 +12,18 @@ export default async function VerifyEmailPage(props: PageProps<'/verify-email'>)
   const { token } = await props.searchParams
   let ok = false
   let message = 'This verification link is invalid or has expired.'
+  let showResend = false
 
   if (typeof token === 'string' && token.length > 20) {
     const result = await verifyEmail(token)
     ok = result.ok
     message = result.message
+    // Show resend option if token expired
+    showResend = !ok && message.toLowerCase().includes('expired')
+  } else {
+    // Invalid or missing token
+    showResend = true
+    message = 'This verification link is invalid or incomplete.'
   }
 
   const user = await getSessionUser()
@@ -31,15 +38,28 @@ export default async function VerifyEmailPage(props: PageProps<'/verify-email'>)
         )}
       </div>
       <h1 className="text-2xl font-bold tracking-tight">
-        {ok ? 'Email verified' : 'Link invalid'}
+        {ok ? 'Email verified' : 'Verification failed'}
       </h1>
       <p className="mt-2 text-muted-foreground">{message}</p>
-      <Link
-        href={user ? '/dashboard' : '/login'}
-        className="mt-6 inline-flex h-11 items-center justify-center rounded-lg bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-primary-hover"
-      >
-        {user ? 'Go to dashboard' : 'Sign in'}
-      </Link>
+      
+      <div className="mt-6 flex flex-col gap-3 items-center">
+        <Link
+          href={user ? '/dashboard' : '/login'}
+          className="inline-flex h-11 items-center justify-center rounded-lg bg-primary px-6 text-sm font-medium text-primary-foreground hover:bg-primary-hover transition-colors"
+        >
+          {user ? 'Go to dashboard' : 'Sign in'}
+        </Link>
+        
+        {!ok && showResend && (
+          <Link
+            href="/signup"
+            className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+          >
+            <Mail className="size-4" aria-hidden />
+            Request new verification link
+          </Link>
+        )}
+      </div>
     </div>
   )
 }

@@ -54,7 +54,13 @@ export function ProfileForm({
           </p>
           <div>
             <Label htmlFor="name">Full name</Label>
-            <Input id="name" name="name" defaultValue={defaults.name ?? ''} invalid={Boolean(state?.errors?.name)} />
+            <Input 
+              id="name" 
+              name="name" 
+              autoComplete="name"
+              defaultValue={defaults.name ?? ''} 
+              invalid={Boolean(state?.errors?.name)} 
+            />
             <FieldError>{state?.errors?.name?.[0]}</FieldError>
           </div>
           <div>
@@ -88,7 +94,13 @@ export function ProfileForm({
           <div className="grid gap-5 sm:grid-cols-2">
             <div>
               <Label htmlFor="name">Full name</Label>
-              <Input id="name" name="name" defaultValue={defaults.name ?? ''} invalid={Boolean(state?.errors?.name)} />
+              <Input 
+                id="name" 
+                name="name" 
+                autoComplete="name"
+                defaultValue={defaults.name ?? ''} 
+                invalid={Boolean(state?.errors?.name)} 
+              />
               <FieldError>{state?.errors?.name?.[0]}</FieldError>
             </div>
             <div>
@@ -134,6 +146,7 @@ export function ProfileForm({
               <Input
                 id="university"
                 name="university"
+                autoComplete="organization"
                 placeholder="University of Example"
                 defaultValue={defaults.university ?? ''}
                 invalid={Boolean(state?.errors?.university)}
@@ -174,6 +187,7 @@ export function ProfileForm({
               <Input
                 id="location"
                 name="location"
+                autoComplete="address-level2"
                 placeholder="Manila, Philippines"
                 defaultValue={defaults.location ?? ''}
                 invalid={Boolean(state?.errors?.location)}
@@ -189,6 +203,8 @@ export function ProfileForm({
                 id="contactEmail"
                 name="contactEmail"
                 type="email"
+                autoComplete="email"
+                inputMode="email"
                 placeholder="you@example.com"
                 defaultValue={defaults.contactEmail ?? ''}
                 invalid={Boolean(state?.errors?.contactEmail)}
@@ -201,6 +217,8 @@ export function ProfileForm({
                 id="websiteUrl"
                 name="websiteUrl"
                 type="url"
+                autoComplete="url"
+                inputMode="url"
                 placeholder="https://…"
                 defaultValue={defaults.websiteUrl ?? ''}
                 invalid={Boolean(state?.errors?.websiteUrl)}

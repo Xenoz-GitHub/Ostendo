@@ -3,7 +3,7 @@ import { Prisma } from '@prisma/client'
 import { db } from '@/lib/db'
 import { parseDesign, type DesignState } from '@/lib/design'
 
-export type TemplateId = 'MINIMAL' | 'DEVELOPER' | 'CREATIVE' | 'EDITORIAL'
+export type TemplateId = 'MINIMAL' | 'DEVELOPER' | 'CREATIVE'
 
 export type ProjectItem = {
   id: string
@@ -48,7 +48,6 @@ export type SocialLinkItem = {
 }
 
 export type PortfolioData = {
-  ownerId: string
   username: string
   name: string
   avatarUrl: string | null
@@ -71,7 +70,6 @@ export type PortfolioData = {
 }
 
 type PortfolioRow = {
-  id: string
   username: string | null
   name: string | null
   avatarUrl: string | null
@@ -126,7 +124,6 @@ type PortfolioRow = {
 function toPortfolioData(row: PortfolioRow, design: DesignState): PortfolioData | null {
   if (!row.username) return null
   return {
-    ownerId: row.id,
     username: row.username,
     name: row.name ?? 'Unnamed',
     avatarUrl: row.avatarUrl,
@@ -173,7 +170,6 @@ function toPublishedPortfolioData(row: PortfolioRow): PortfolioData | null {
 }
 
 const portfolioSelect = {
-  id: true,
   username: true,
   name: true,
   avatarUrl: true,

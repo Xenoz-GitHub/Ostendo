@@ -17,6 +17,13 @@ import {
   sendPasswordResetEmail,
   sendVerificationEmail,
 } from '@/lib/email'
+import {
+  checkLoginRateLimit,
+  checkSignupRateLimit,
+  checkPasswordResetRateLimit,
+  checkEmailVerificationRateLimit,
+} from '@/lib/rate-limit'
+import { getClientIp } from '@/lib/request'
 
 export type AuthFormState = {
   errors?: Record<string, string[] | undefined>
@@ -34,6 +41,15 @@ export async function signup(_prev: AuthFormState, formData: FormData): Promise<
     return { errors: parsed.error.flatten().fieldErrors }
   }
   const { name, email, password } = parsed.data
+
+  // Rate limiting by IP to prevent abuse
+  const clientIp = await getClientIp()
+  const rateLimit = await checkSignupRateLimit(clientIp)
+  if (!rateLimit.success) {
+    return {
+      message: 'Too many signup attempts. Please try again later.',
+    }
+  }
 
   const existing = await db.user.findUnique({ where: { email }, select: { id: true } })
   if (existing) {
@@ -84,6 +100,14 @@ export async function login(_prev: AuthFormState, formData: FormData): Promise<A
   }
   const { email, password } = parsed.data
 
+  // Rate limiting by email to prevent brute force
+  const rateLimit = await checkLoginRateLimit(email)
+  if (!rateLimit.success) {
+    return {
+      message: 'Too many login attempts. Please try again in 15 minutes.',
+    }
+  }
+
   const user = await db.user.findUnique({
     where: { email },
     select: { id: true, passwordHash: true, username: true },
@@ -115,6 +139,16 @@ export async function forgotPassword(
     return { errors: parsed.error.flatten().fieldErrors }
   }
 
+  // Rate limiting by email to prevent abuse
+  const rateLimit = await checkPasswordResetRateLimit(parsed.data.email)
+  if (!rateLimit.success) {
+    // Still show success message to avoid leaking user existence
+    return {
+      success: true,
+      message: 'If that email has an account, a reset link is on its way.',
+    }
+  }
+
   const user = await db.user.findUnique({
     where: { email: parsed.data.email },
     select: { id: true, email: true },
@@ -132,6 +166,7 @@ export async function forgotPassword(
     await sendPasswordResetEmail(user, token)
   }
 
+  // Always show success to prevent user enumeration
   return {
     success: true,
     message: 'If that email has an account, a reset link is on its way.',
@@ -189,6 +224,14 @@ export async function verifyEmail(token: string): Promise<{ ok: boolean; message
 export async function resendVerificationEmail(): Promise<AuthFormState> {
   const user = await getSessionUser()
   if (!user) return { message: 'You need to be signed in.' }
+
+  // Rate limiting to prevent abuse
+  const rateLimit = await checkEmailVerificationRateLimit(user.id)
+  if (!rateLimit.success) {
+    return {
+      message: 'Too many verification emails sent. Please try again later.',
+    }
+  }
 
   try {
     const token = generateToken()

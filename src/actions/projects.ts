@@ -112,6 +112,12 @@ export async function toggleFeaturedProject(id: string): Promise<void> {
 
 export async function reorderProjects(ids: string[]): Promise<void> {
   const user = await requireUser()
+  
+  // Prevent DoS with excessive array sizes
+  if (ids.length > 100) {
+    throw new Error('Too many items to reorder')
+  }
+  
   const projects = await db.project.findMany({
     where: { id: { in: ids }, userId: user.id },
     select: { id: true },

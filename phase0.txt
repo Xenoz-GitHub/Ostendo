@@ -1271,4 +1271,4 @@ Desktop website
 
 Mobile compression
 
-This fits your product vision better because students will probably access this platform mostly through their phones. A student creating a portfolio, updating skills, uploading projects, or sharing their profile should feel like they are using a career app, not opening a university website from 2015.
+This fits your product vision better because students will probably access this platform mostly through their phones. A student creating a portfolio, updating skills, uploading projects, or sharing their profile should feel like they are using a career app, not opening a university website from 2015.~
