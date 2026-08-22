@@ -72,7 +72,7 @@ export function Label({
 export function FieldError({ children }: { children?: React.ReactNode }) {
   if (!children) return null
   return (
-    <p role="alert" className="mt-1.5 text-sm text-destructive">
+    <p role="alert" aria-live="polite" className="mt-1.5 text-sm text-destructive">
       {children}
     </p>
   )

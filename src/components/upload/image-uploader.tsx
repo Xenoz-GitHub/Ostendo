@@ -41,14 +41,40 @@ export function ImageUploader({
       const body = new FormData()
       body.append('file', file)
       const response = await fetch('/api/upload', { method: 'POST', body })
-      const payload = (await response.json().catch(() => null)) as { ok?: boolean; url?: string; error?: string } | null
-      if (!response.ok || !payload?.ok || !payload.url) {
-        setError(payload?.error ?? 'Upload failed. Please try again.')
+      
+      // Handle network and server errors with specific messages
+      if (!response.ok) {
+        const payload = await response.json().catch(() => null) as { error?: string } | null
+        
+        if (response.status === 400) {
+          setError(payload?.error ?? 'Invalid file. Please check the file type and try again.')
+        } else if (response.status === 413) {
+          setError('Image is too large. Keep it under 5 MB.')
+        } else if (response.status === 500) {
+          setError('Server error. Image upload is not configured properly.')
+        } else if (response.status === 502 || response.status === 503) {
+          setError('Image service is temporarily unavailable. Please try again later.')
+        } else if (response.status === 429) {
+          setError('Too many upload attempts. Please wait a moment and try again.')
+        } else {
+          setError(payload?.error ?? 'Upload failed. Please try again.')
+        }
+        return
+      }
+      
+      const payload = await response.json().catch(() => null) as { ok?: boolean; url?: string; error?: string } | null
+      if (!payload?.ok || !payload.url) {
+        setError(payload?.error ?? 'Upload failed. No image URL returned.')
         return
       }
       setUrl(payload.url)
-    } catch {
-      setError('Upload failed. Please check your connection and try again.')
+    } catch (error) {
+      // Network errors (no internet, timeout, etc.)
+      if (error instanceof TypeError && error.message.includes('fetch')) {
+        setError('Network error. Please check your internet connection and try again.')
+      } else {
+        setError('Upload failed. Please check your connection and try again.')
+      }
     } finally {
       setBusy(false)
     }
@@ -129,7 +155,7 @@ export function ImageUploader({
         />
       )}
 
-      {error && <p role="alert" className="text-sm text-destructive">{error}</p>}
+      {error && <p role="alert" aria-live="polite" className="text-sm text-destructive">{error}</p>}
       {hint && !error && <p className="text-xs text-muted-foreground">{hint}</p>}
     </div>
   )

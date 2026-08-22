@@ -19,18 +19,37 @@ export function Skeleton({
 /**
  * Card skeleton for loading card-based content.
  */
-export function CardSkeleton() {
-  return (
-    <div className="rounded-lg border border-border bg-surface p-6">
-      <Skeleton className="mb-3 h-5 w-3/4" />
-      <Skeleton className="mb-2 h-4 w-full" />
-      <Skeleton className="mb-4 h-4 w-5/6" />
-      <div className="flex gap-2">
-        <Skeleton className="h-6 w-16" />
-        <Skeleton className="h-6 w-16" />
-        <Skeleton className="h-6 w-16" />
+export function CardSkeleton({ count = 1, className }: { count?: number; className?: string }) {
+  if (count === 1) {
+    return (
+      <div className={cn('rounded-lg border border-border bg-surface p-6', className)}>
+        <Skeleton className="mb-3 h-5 w-3/4" />
+        <Skeleton className="mb-2 h-4 w-full" />
+        <Skeleton className="mb-4 h-4 w-5/6" />
+        <div className="flex gap-2">
+          <Skeleton className="h-6 w-16" />
+          <Skeleton className="h-6 w-16" />
+          <Skeleton className="h-6 w-16" />
+        </div>
       </div>
-    </div>
+    )
+  }
+  
+  return (
+    <>
+      {Array.from({ length: count }).map((_, i) => (
+        <div key={i} className={cn('rounded-lg border border-border bg-surface p-6', className)}>
+          <Skeleton className="mb-3 h-5 w-3/4" />
+          <Skeleton className="mb-2 h-4 w-full" />
+          <Skeleton className="mb-4 h-4 w-5/6" />
+          <div className="flex gap-2">
+            <Skeleton className="h-6 w-16" />
+            <Skeleton className="h-6 w-16" />
+            <Skeleton className="h-6 w-16" />
+          </div>
+        </div>
+      ))}
+    </>
   )
 }
 
@@ -74,21 +93,15 @@ export function ProjectCardSkeleton() {
 /**
  * Form skeleton for loading forms.
  */
-export function FormSkeleton() {
+export function FormSkeleton({ fields = 3, className }: { fields?: number; className?: string }) {
   return (
-    <div className="space-y-6">
-      <div>
-        <Skeleton className="mb-2 h-4 w-24" />
-        <Skeleton className="h-10 w-full" />
-      </div>
-      <div>
-        <Skeleton className="mb-2 h-4 w-32" />
-        <Skeleton className="h-10 w-full" />
-      </div>
-      <div>
-        <Skeleton className="mb-2 h-4 w-28" />
-        <Skeleton className="h-24 w-full" />
-      </div>
+    <div className={cn('space-y-6', className)}>
+      {Array.from({ length: fields }).map((_, i) => (
+        <div key={i}>
+          <Skeleton className="mb-2 h-4 w-24" />
+          <Skeleton className="h-10 w-full" />
+        </div>
+      ))}
       <Skeleton className="h-10 w-32" />
     </div>
   )
@@ -97,10 +110,10 @@ export function FormSkeleton() {
 /**
  * Dashboard stats skeleton for loading dashboard statistics.
  */
-export function DashboardStatsSkeleton() {
+export function DashboardStatsSkeleton({ count = 4, className }: { count?: number; className?: string }) {
   return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {Array.from({ length: 4 }).map((_, i) => (
+    <div className={cn('grid gap-4 sm:grid-cols-2 lg:grid-cols-4', className)}>
+      {Array.from({ length: count }).map((_, i) => (
         <div key={i} className="rounded-lg border border-border bg-surface p-4">
           <Skeleton className="mb-2 h-4 w-24" />
           <Skeleton className="h-8 w-16" />

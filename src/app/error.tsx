@@ -1,15 +1,11 @@
 'use client'
 
 import { useEffect } from 'react'
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Error',
-}
 
 /**
  * Next.js error boundary that catches errors in the app router.
  * This is automatically used by Next.js when an error occurs.
+ * Note: Client components cannot export metadata.
  */
 export default function Error({
   error,

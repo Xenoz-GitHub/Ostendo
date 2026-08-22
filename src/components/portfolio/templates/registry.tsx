@@ -1,10 +1,12 @@
-import type { ComponentType } from 'react'
+import { lazy, Suspense, type ComponentType } from 'react'
 import type { PortfolioData, TemplateId } from '@/lib/portfolio'
 import { PortfolioRoot } from '@/components/portfolio/design-styles'
-import MinimalTemplate from './minimal'
-import DeveloperTemplate from './developer'
-import CreativeTemplate from './creative'
-import EditorialTemplate from './editorial'
+
+// Lazy load templates for code splitting - reduces initial bundle size
+const MinimalTemplate = lazy(() => import('./minimal'))
+const DeveloperTemplate = lazy(() => import('./developer'))
+const CreativeTemplate = lazy(() => import('./creative'))
+const EditorialTemplate = lazy(() => import('./editorial'))
 
 export type TemplateDefinition = {
   id: TemplateId
@@ -48,7 +50,20 @@ export function TemplateRenderer({ data }: { data: PortfolioData }) {
   const Template = getTemplate(data.template).component
   return (
     <PortfolioRoot design={data.design}>
-      <Template data={data} />
+      <Suspense fallback={<TemplateLoadingFallback />}>
+        <Template data={data} />
+      </Suspense>
     </PortfolioRoot>
+  )
+}
+
+function TemplateLoadingFallback() {
+  return (
+    <div className="flex min-h-screen items-center justify-center">
+      <div className="flex flex-col items-center gap-3">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-border border-t-foreground" />
+        <p className="text-sm text-muted-foreground">Loading portfolio...</p>
+      </div>
+    </div>
   )
 }
