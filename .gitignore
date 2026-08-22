@@ -46,3 +46,8 @@ credentials*.txt
 
 .vercel
 .env*
+
+
+# documentation and report files - ignore all except README
+*.md
+!README.md
