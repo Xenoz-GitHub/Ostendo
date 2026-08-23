@@ -105,7 +105,7 @@ CREATE POLICY "Users can manage their own portfolio design"
 -- ContactMessage table policies
 CREATE POLICY "Users can view messages sent to them"
   ON "ContactMessage" FOR SELECT
-  USING ("recipientId" = current_setting('app.user_id', TRUE)::TEXT);
+  USING ("userId" = current_setting('app.user_id', TRUE)::TEXT);
 
 CREATE POLICY "Anyone can insert contact messages"
   ON "ContactMessage" FOR INSERT

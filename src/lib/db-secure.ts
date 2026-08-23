@@ -120,8 +120,8 @@ export function createSecureDb(userId: UserId) {
     // Contact messages (user can only see their own)
     contactMessage: {
       findMany: (args?: Omit<Prisma.ContactMessageFindManyArgs, 'where'>) =>
-        db.contactMessage.findMany({ ...args, where: { recipientId: userId } }),
-      count: () => db.contactMessage.count({ where: { recipientId: userId } }),
+        db.contactMessage.findMany({ ...args, where: { userId } }),
+      count: () => db.contactMessage.count({ where: { userId } }),
     },
   }
 }
