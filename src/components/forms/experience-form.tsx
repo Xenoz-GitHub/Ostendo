@@ -36,7 +36,7 @@ export function ExperienceForm({ entry, onCancel }: { entry?: Entry; onCancel?: 
           <Input
             id={`organization-${key}`}
             name="organization"
-            placeholder="Acme Inc."
+            placeholder="Tech Solutions Inc."
             defaultValue={entry?.organization ?? ''}
             invalid={Boolean(state?.errors?.organization)}
           />

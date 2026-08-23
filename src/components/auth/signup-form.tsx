@@ -32,7 +32,7 @@ export function SignupForm() {
           name="name"
           type="text"
           autoComplete="name"
-          placeholder="Crystal Santos"
+          placeholder="John Doe"
           invalid={Boolean(state?.errors?.name)}
         />
         <FieldError>{state?.errors?.name?.[0]}</FieldError>

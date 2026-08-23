@@ -110,12 +110,12 @@ export async function toggleFeaturedProject(id: string): Promise<void> {
   revalidatePath('/dashboard')
 }
 
-export async function reorderProjects(ids: string[]): Promise<void> {
+export async function reorderProjects(ids: string[]): Promise<{ ok: boolean; message?: string }> {
   const user = await requireUser()
   
   // Prevent DoS with excessive array sizes
   if (ids.length > 100) {
-    throw new Error('Too many items to reorder')
+    return { ok: false, message: 'Cannot reorder more than 100 items at once.' }
   }
   
   const projects = await db.project.findMany({
@@ -131,4 +131,5 @@ export async function reorderProjects(ids: string[]): Promise<void> {
   )
   revalidatePath('/dashboard/portfolio/projects')
   revalidatePath('/dashboard')
+  return { ok: true }
 }

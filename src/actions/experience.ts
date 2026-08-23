@@ -89,12 +89,12 @@ export async function deleteExperience(id: string): Promise<void> {
   revalidatePath('/dashboard/portfolio/experience')
 }
 
-export async function reorderExperience(ids: string[]): Promise<void> {
+export async function reorderExperience(ids: string[]): Promise<{ ok: boolean; message?: string }> {
   const user = await requireUser()
   
   // Prevent DoS with excessive array sizes
   if (ids.length > 100) {
-    throw new Error('Too many items to reorder')
+    return { ok: false, message: 'Cannot reorder more than 100 items at once.' }
   }
   
   const rows = await db.experience.findMany({
@@ -109,4 +109,5 @@ export async function reorderExperience(ids: string[]): Promise<void> {
     )
   )
   revalidatePath('/dashboard/portfolio/experience')
+  return { ok: true }
 }

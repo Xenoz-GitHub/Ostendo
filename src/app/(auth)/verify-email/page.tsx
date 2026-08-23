@@ -5,7 +5,7 @@ import { verifyEmail } from '@/actions/auth'
 import { getSessionUser } from '@/lib/auth'
 
 export const metadata: Metadata = {
-  title: 'Verify email — Ostendo',
+  title: 'Verify email',
 }
 
 export default async function VerifyEmailPage(props: PageProps<'/verify-email'>) {

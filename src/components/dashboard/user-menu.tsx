@@ -2,11 +2,12 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { LogOut, Settings, UserRound, ChevronDown } from 'lucide-react'
+import { LogOut, Settings, UserRound, ChevronDown, Moon, Sun } from 'lucide-react'
 import { logout } from '@/actions/auth'
 import { initials } from '@/lib/utils'
 import { cn } from '@/lib/utils'
 import { useAppOrigin } from '@/lib/use-origin'
+import { useTheme } from '@/components/theme/theme-provider'
 
 export function UserMenu({
   user,
@@ -21,6 +22,7 @@ export function UserMenu({
   const [open, setOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
   const origin = useAppOrigin()
+  const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
     if (!open) return
@@ -82,6 +84,24 @@ export function UserMenu({
             <MenuItem href="/dashboard/account" icon={<Settings className="size-4" />}>
               Account settings
             </MenuItem>
+            <button
+              type="button"
+              onClick={toggleTheme}
+              role="menuitem"
+              className="flex w-full items-center gap-2.5 rounded-lg px-2 py-2 text-sm transition-colors hover:bg-surface-muted"
+            >
+              {theme === 'light' ? (
+                <>
+                  <Moon className="size-4" aria-hidden />
+                  Dark mode
+                </>
+              ) : (
+                <>
+                  <Sun className="size-4" aria-hidden />
+                  Light mode
+                </>
+              )}
+            </button>
             <form action={logout} className="p-1.5">
               <button
                 type="submit"

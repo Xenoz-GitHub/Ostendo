@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { SignupForm } from '@/components/auth/signup-form'
 
 export const metadata: Metadata = {
-  title: 'Create account — Ostendo',
+  title: 'Create account',
   description: 'Create your free student portfolio account.',
 }
 

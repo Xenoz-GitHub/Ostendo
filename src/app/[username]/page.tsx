@@ -10,7 +10,7 @@ export async function generateMetadata(props: PageProps<'/[username]'>): Promise
   const { username } = await props.params
   const data = await getPublicPortfolioData(username)
   if (!data) {
-    return { title: 'Portfolio not found — Ostendo' }
+    return { title: 'Portfolio not found' }
   }
   const base = await appBaseUrl()
   const title = `${data.name} — ${data.headline ?? 'Student portfolio'}`

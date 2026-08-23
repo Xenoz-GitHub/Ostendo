@@ -21,7 +21,7 @@ export function UsernameForm({ current }: { current?: string | null }) {
             id="username"
             name="username"
             className="font-mono"
-            placeholder="crystal"
+            placeholder="yourname"
             value={value}
             onChange={(event) => setValue(event.target.value)}
             autoComplete="off"

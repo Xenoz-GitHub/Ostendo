@@ -147,7 +147,7 @@ export function ProfileForm({
                 id="university"
                 name="university"
                 autoComplete="organization"
-                placeholder="University of Example"
+                placeholder="State University"
                 defaultValue={defaults.university ?? ''}
                 invalid={Boolean(state?.errors?.university)}
               />
@@ -188,7 +188,7 @@ export function ProfileForm({
                 id="location"
                 name="location"
                 autoComplete="address-level2"
-                placeholder="Manila, Philippines"
+                placeholder="New York, USA"
                 defaultValue={defaults.location ?? ''}
                 invalid={Boolean(state?.errors?.location)}
               />

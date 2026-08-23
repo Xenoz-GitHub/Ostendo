@@ -43,12 +43,12 @@ export async function deleteSkill(id: string): Promise<void> {
   revalidatePath('/dashboard')
 }
 
-export async function reorderSkills(ids: string[]): Promise<void> {
+export async function reorderSkills(ids: string[]): Promise<{ ok: boolean; message?: string }> {
   const user = await requireUser()
   
   // Prevent DoS with excessive array sizes
   if (ids.length > 100) {
-    throw new Error('Too many items to reorder')
+    return { ok: false, message: 'Cannot reorder more than 100 items at once.' }
   }
   
   const rows = await db.skill.findMany({
@@ -63,4 +63,5 @@ export async function reorderSkills(ids: string[]): Promise<void> {
     )
   )
   revalidatePath('/dashboard/portfolio/skills')
+  return { ok: true }
 }

@@ -51,9 +51,20 @@ export async function updateProfile(
         where: { id: user.id },
         data: { name: name || null, avatarUrl: avatarUrl || null },
       }),
-      db.profile.update({
+      db.profile.upsert({
         where: { userId: user.id },
-        data: {
+        create: {
+          userId: user.id,
+          headline: headline || null,
+          bio: bio || null,
+          university: university || null,
+          major: major || null,
+          graduationYear,
+          location: location || null,
+          contactEmail: contactEmail || null,
+          websiteUrl: websiteUrl || null,
+        },
+        update: {
           headline: headline || null,
           bio: bio || null,
           university: university || null,

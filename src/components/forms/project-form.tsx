@@ -33,7 +33,7 @@ export function ProjectForm({
 
       <div>
         <Label htmlFor="name">Project name</Label>
-        <Input id="name" name="name" placeholder="CampusConnect" defaultValue={project?.name ?? ''} invalid={Boolean(state?.errors?.name)} />
+        <Input id="name" name="name" placeholder="MyPortfolio" defaultValue={project?.name ?? ''} invalid={Boolean(state?.errors?.name)} />
         <FieldError>{state?.errors?.name?.[0]}</FieldError>
       </div>
 

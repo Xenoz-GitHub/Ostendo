@@ -1,12 +1,14 @@
 import type { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
+  const startUrl = process.env.NODE_ENV === 'production' ? '/' : '/dashboard'
+  
   return {
     name: 'Ostendo — Student portfolios',
     short_name: 'Ostendo',
     description:
       'Build a professional portfolio, claim your personal URL, and share your work with the world.',
-    start_url: '/dashboard',
+    start_url: startUrl,
     display: 'standalone',
     background_color: '#f7f7f6',
     theme_color: '#0f766e',
