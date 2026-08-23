@@ -65,9 +65,10 @@ export function DashboardShell({
         {children}
       </main>
 
+      {/* Bottom navigation - mobile and tablet only */}
       <nav
         aria-label="Primary"
-        className="fixed inset-x-0 bottom-0 z-40 h-bottom-nav border-t border-border bg-surface"
+        className="fixed inset-x-0 bottom-0 z-40 h-bottom-nav border-t border-border bg-surface md:hidden"
       >
         <ul className="mx-auto flex h-full w-full max-w-5xl items-stretch">
           {navItems.map((item) => (
